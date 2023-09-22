@@ -6,7 +6,6 @@ width=350
 margin=24,24,24,24
 padding=16
 border-size=0
-border-color=#5b9bf8
 border-radius=8
 default-timeout=5000
 group-by=summary

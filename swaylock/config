@@ -2,22 +2,22 @@ daemonize
 show-failed-attempts
 clock
 screenshot
-effect-blur=9x5
-effect-vignette=0.5:0.5
-color=1f1d2e80
-font="Inter"
+effect-blur=0
+effect-vignette=0.0:0.0
+color=0F0F0F
+font="segoe ui variable static display"
 indicator
 indicator-radius=200
-indicator-thickness=20
-line-color=1f1d2e
-ring-color=191724
-inside-color=1f1d2e
-key-hl-color=eb6f92
+indicator-thickness=0
+line-color=0F0F0F
+ring-color=0F0F0F
+inside-color=0F0F0F
+key-hl-color=5b9bf8
 separator-color=00000000
-text-color=e0def4
+text-color=FFFFFF
 text-caps-lock-color=""
-line-ver-color=eb6f92
-ring-ver-color=eb6f92
+line-ver-color=FFFFFF
+ring-ver-color=FFFFFF
 inside-ver-color=1f1d2e
 text-ver-color=e0def4
 ring-wrong-color=31748f
@@ -29,10 +29,7 @@ ring-clear-color=9ccfd8
 line-clear-color=1f1d2e
 line-wrong-color=1f1d2e
 bs-hl-color=31748f
-grace=2
-grace-no-mouse
-grace-no-touch
+grace=0
 datestr=%a, %B %e
 timestr=%I:%M %p
 fade-in=0.2
-ignore-empty-password
