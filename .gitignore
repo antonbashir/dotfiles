@@ -36,3 +36,4 @@
 !gtk-install.sh
 !swaylock/**/*
 !.gitignore
+!todoist-flags.conf
