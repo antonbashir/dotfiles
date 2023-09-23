@@ -151,23 +151,7 @@ element-text {
 
 /*****----- Mode Switcher -----*****/
 mode-switcher{
-    enabled:                     true;
-    spacing:                     10px;
-    margin:                      0px;
-    padding:                     0px 250px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-}
-button {
-    padding:                     10px;
-    border-radius:               0px;
-    background-color:            @background-alt;
-    text-color:                  inherit;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            var(urgent);
-    text-color:                  var(background);
+    enabled:                     false;
 }
 
 /*****----- Message -----*****/
