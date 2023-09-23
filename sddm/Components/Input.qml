@@ -464,7 +464,6 @@ Column {
 
         Button {
             id: loginButton
-            anchors.horizontalCenter: parent.horizontalCenter
             text: config.TranslateLogin || textConstants.login
             height: root.font.pointSize * 3
             implicitWidth: parent.width
