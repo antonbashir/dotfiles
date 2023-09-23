@@ -15,7 +15,7 @@
 !xsettingsd/
 !rofi/
 !refind/
-!swaylock
+!gtklock
 !backgrounds/**/*
 !gtk-2.0/**/*
 !gtk-3.0/**/*
@@ -36,6 +36,6 @@
 !spotify-flags.conf
 !sddm-install.sh
 !gtk-install.sh
-!swaylock/**/*
+!gtklock/**/*
 !.gitignore
 !todoist-flags.conf
