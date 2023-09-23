@@ -155,6 +155,24 @@ Column {
 
         }
 
+        Canvas {
+            id: avatar
+            anchors {
+                top: parent.top
+                topMargin: parent.height / 4
+                horizontalCenter: parent.horizontalCenter
+            }
+            width: 130
+            height: 130
+            onPaint: {
+                var ctx = getContext("2d");
+                ctx.beginPath()
+                ctx.ellipse(0, 0, width, height)
+                ctx.clip()
+                ctx.drawImage(selectUser.currentIconPath, 0, 0, width, height)
+            }
+        }
+
         TextField {
             id: username
             enabled: false
@@ -259,6 +277,7 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
 
         CheckBox {
+            visible: false
             id: revealSecret
             width: parent.width
             hoverEnabled: true
