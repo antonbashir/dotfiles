@@ -198,14 +198,14 @@ Column {
 
     Item {
       id: avatar
-      width: 130
-      height: 130
+      width: 96
+      height: 96
       anchors.horizontalCenter: parent.horizontalCenter
       Image {
           id: avatarImg
           source: "file:///home/anton/.face"
-          width: 130
-          height: 130
+          width: 96
+          height: 96
           fillMode: Image.PreserveAspectCrop
           layer.enabled: true
           layer.effect: OpacityMask {
