@@ -84,7 +84,7 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     2;
+    columns:                     3;
     lines:                       7;
     cycle:                       true;
     dynamic:                     true;
