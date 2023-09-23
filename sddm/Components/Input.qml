@@ -155,24 +155,6 @@ Column {
 
         }
 
-        Canvas {
-            id: avatar
-            anchors {
-                top: parent.top
-                topMargin: parent.height / 4
-                horizontalCenter: parent.horizontalCenter
-            }
-            width: 130
-            height: 130
-            onPaint: {
-                var ctx = getContext("2d");
-                ctx.beginPath()
-                ctx.ellipse(0, 0, width, height)
-                ctx.clip()
-                ctx.drawImage(selectUser.currentIconPath, 0, 0, width, height)
-            }
-        }
-
         TextField {
             id: username
             enabled: false
@@ -212,6 +194,33 @@ Column {
                 }
             ]
         }
+
+    }
+
+    Item {
+      id: avatar
+      width: 130
+      height: 130
+      anchors.horizontalCenter: parent.horizontalCenter
+      Image {
+          id: avatarImg
+          source: "file:///home/anton/.face"
+          width: 130
+          height: 130
+          fillMode: Image.PreserveAspectCrop
+          layer.enabled: true
+          layer.effect: OpacityMask {
+            maskSource: avatarMask
+          }
+      }
+
+      Rectangle {
+          id: avatarMask
+          width: parent.width
+          height: parent.height
+          radius: parent.width / 2
+          visible: false
+      }
 
     }
 
@@ -407,7 +416,7 @@ Column {
     }
 
     Item {
-        height: root.font.pointSize * 2.3
+        height: root.font.pointSize * 2.0
         width: 350
         anchors.horizontalCenter: parent.horizontalCenter
         Label {
@@ -450,7 +459,7 @@ Column {
 
     Item {
         id: login
-        height: root.font.pointSize * 3
+        height: root.font.pointSize * 2.5
         width: 350
         anchors.horizontalCenter: parent.horizontalCenter
 
