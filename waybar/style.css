@@ -5,18 +5,19 @@
   font-family: "segoe ui variable static display";
   font-size: 14px;
   font-weight: bold;
-  background-color: #0F0F0F;
+  color: #FFFFFF;
 }
 
 window#waybar {
   background: none;
   color: #FFFFFF;
+  background-color: #0F0F0F;
   margin: 0;
 }
 
 #window {
   font-weight: bold;
-  font-family: "monospace";
+  font-family: "segoe ui variable static display";
 }
 
 #mode {
@@ -26,7 +27,6 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  background: none;
   border-radius: 0px;
   margin: 0;
   padding: 0;
@@ -35,13 +35,10 @@ window#waybar {
 #workspaces,
 #mode,
 #window,
-#idle_inhibitor,
 #pulseaudio,
 #cpu,
 #memory,
 #clock,
-#battery,
-#backlight,
 #disk,
 #custom-separator,
 #custom-powermenu,
@@ -58,14 +55,6 @@ window#waybar {
 
 #temperature.critical {
   color: #ff5555;
-}
-
-#custom-vpn.disconnected {
-  color: #cc0000;
-}
-
-#custom-vpn.connected {
-  color: #00ff00;
 }
 
 #custom-separator {
@@ -92,10 +81,4 @@ window#waybar {
 
 #tray {
   padding: 0px 0px 0px 0px;
-}
-
-#custom-spotify {
-  color: #A6E3A1;
-  padding-left: 15px;
-  padding-right: 5px;
 }
