@@ -1,9 +1,11 @@
 * {
   border: none;
-  border-radius: 0;
+  border-radius: 0px;
+  padding: 2px;
   font-family: "segoe ui variable static display";
   font-size: 14px;
   font-weight: bold;
+  background-color: #0F0F0F;
 }
 
 window#waybar {
@@ -15,20 +17,6 @@ window#waybar {
 #window {
   font-weight: bold;
   font-family: "monospace";
-}
-
-#workspaces button {
-  padding: 5px 5px;
-  background: none;
-  color: #FFFFFF;
-}
-
-#workspaces button.active {
-  color: #0F0F0F;
-}
-
-#workspaces button.urgent {
-  background-color: #ff5555;
 }
 
 #mode {
@@ -44,7 +32,6 @@ window#waybar {
   padding: 0;
 }
 
-/* Base styling for modules */
 #workspaces,
 #mode,
 #window,
