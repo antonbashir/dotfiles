@@ -40,7 +40,7 @@
       "critical": 90
     },
     "interval": 1,
-    "format": "   {usage:2}%",
+    "format": "    {usage:2}%",
     "on-click": "foot -e btop"
   },
   "temperature": {
