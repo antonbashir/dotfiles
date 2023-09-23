@@ -8,7 +8,7 @@
 
 window#waybar {
   background: none;
-  color: #f8f8f2;
+  color: #FFFFFF;
   margin: 0;
 }
 
@@ -20,11 +20,11 @@ window#waybar {
 #workspaces button {
   padding: 5px 5px;
   background: none;
-  color: #f8f8f2;
+  color: #FFFFFF;
 }
 
 #workspaces button.active {
-  color: #bd93f9;
+  color: #0F0F0F;
 }
 
 #workspaces button.urgent {
@@ -60,7 +60,7 @@ window#waybar {
 #custom-powermenu,
 #taskbar,
 #tray {
-  padding: 2px 10px 0 10px;
+  padding: 0px 8px 0 8px;
 }
 
 #temperature {
@@ -104,7 +104,7 @@ window#waybar {
 }
 
 #tray {
-  padding: 5px 3px 5px 3px;
+  padding: 0px 0px 0px 0px;
 }
 
 #custom-spotify {

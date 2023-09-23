@@ -15,8 +15,7 @@
     "memory",
     "custom/separator",
     "disk#one",
-    "custom/separator",
-    "custom/spotify"
+    "custom/separator"
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -27,8 +26,6 @@
     "pulseaudio",
     "custom/separator",
     "network",
-    "custom/separator",
-    "battery",
     "custom/separator",
     "custom/powermenu",
     "custom/separator"
