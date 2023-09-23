@@ -14,11 +14,11 @@ Column {
         id: usernameField
 
         height: root.font.pointSize * 4.5
-        width: parent.width / 2
+        width: 350
         anchors.horizontalCenter: parent.horizontalCenter
 
         ComboBox {
-
+            visible: false
             id: selectUser
 
             width: parent.height
@@ -63,6 +63,7 @@ Column {
 
             indicator: Button {
                     id: usernameIcon
+                    visible: false
                     width: selectUser.height * 0.8
                     height: parent.height
                     anchors.left: parent.left
@@ -156,6 +157,7 @@ Column {
 
         TextField {
             id: username
+            enabled: false
             text: config.ForceLastUser == "true" ? selectUser.currentText : null
             font.capitalization: config.AllowBadUsernames == "false" ? Font.Capitalize : Font.MixedCase
             anchors.centerIn: parent
@@ -171,8 +173,6 @@ Column {
             }
             background: Rectangle {
                 color: "transparent"
-                border.color: root.palette.text
-                border.width: parent.activeFocus ? 2 : 1
                 radius: config.RoundCorners || 0
             }
             onAccepted: loginButton.clicked()
@@ -200,7 +200,7 @@ Column {
     Item {
         id: passwordField
         height: root.font.pointSize * 4.5
-        width: parent.width / 2
+        width: 350
         anchors.horizontalCenter: parent.horizontalCenter
 
         TextField {
@@ -217,9 +217,10 @@ Column {
             passwordMaskDelay: config.ForceHideCompletePassword == "true" ? undefined : 1000
             renderType: Text.QtRendering
             background: Rectangle {
-                color: "transparent"
-                border.color: root.palette.text
-                border.width: parent.activeFocus ? 2 : 1
+                color: "#0F0F0F"
+                opacity: 0.8
+                border.color: "transparent"
+                border.width: 0
                 radius: config.RoundCorners || 0
             }
             onAccepted: loginButton.clicked()
@@ -254,7 +255,7 @@ Column {
     Item {
         id: secretCheckBox
         height: root.font.pointSize * 7
-        width: parent.width / 2
+        width: 350
         anchors.horizontalCenter: parent.horizontalCenter
 
         CheckBox {
@@ -388,7 +389,7 @@ Column {
 
     Item {
         height: root.font.pointSize * 2.3
-        width: parent.width / 2
+        width: 350
         anchors.horizontalCenter: parent.horizontalCenter
         Label {
             id: errorMessage
@@ -431,7 +432,7 @@ Column {
     Item {
         id: login
         height: root.font.pointSize * 3
-        width: parent.width / 2
+        width: 350
         anchors.horizontalCenter: parent.horizontalCenter
 
         Button {
@@ -456,7 +457,7 @@ Column {
             background: Rectangle {
                 id: buttonBackground
                 color: "white"
-                opacity: 0.2
+                opacity: 0.5
                 radius: config.RoundCorners || 0
             }
 

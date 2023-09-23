@@ -15,6 +15,7 @@ Item {
 
     ComboBox {
         id: selectSession
+        visible: false
 
         hoverEnabled: true
         anchors.left: parent.left
