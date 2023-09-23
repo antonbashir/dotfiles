@@ -9,6 +9,7 @@ border-size=0
 border-radius=15
 default-timeout=5000
 group-by=summary
+layer=overlay
 
 [grouped]
 format=<b>%s</b>\n%b
