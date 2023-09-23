@@ -15,8 +15,8 @@ ColumnLayout {
     Clock {
         id: clock
         Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
-        Layout.preferredHeight: 150
-        Layout.topMargin: 150
+        Layout.preferredHeight: 50
+        Layout.topMargin: 250
         Layout.leftMargin: p != "0" ? a == "left" ? -p : a == "right" ? p : 0 : 0
     }
 

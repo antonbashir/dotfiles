@@ -194,7 +194,6 @@ Column {
                 }
             ]
         }
-
     }
 
     Item {
@@ -281,12 +280,12 @@ Column {
 
     Item {
         id: secretCheckBox
+        visible: false
         height: root.font.pointSize * 7
         width: 350
         anchors.horizontalCenter: parent.horizontalCenter
 
         CheckBox {
-            visible: false
             id: revealSecret
             width: parent.width
             hoverEnabled: true
