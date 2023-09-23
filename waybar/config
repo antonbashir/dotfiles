@@ -31,7 +31,7 @@
   ],
 
   "clock": {
-    "format": "  {:%a %d %b %H:%M}"
+    "format": "  {:%d.%m.%y %H:%M}"
   },
   "cpu": {
     "states": {
