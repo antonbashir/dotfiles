@@ -39,3 +39,5 @@
 !gtklock/**/*
 !.gitignore
 !todoist-flags.conf
+!limits.conf
+!sysctl.conf
