@@ -43,3 +43,6 @@
 !todoist-flags.conf
 !limits.conf
 !sysctl.conf
+!README.md
+!screenshots
+!screenshots/**/*
