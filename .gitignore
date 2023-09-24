@@ -15,7 +15,8 @@
 !xsettingsd/
 !rofi/
 !refind/
-!gtklock
+!gtklock/
+!cava/
 !backgrounds/**/*
 !gtk-2.0/**/*
 !gtk-3.0/**/*
@@ -37,6 +38,7 @@
 !sddm-install.sh
 !gtk-install.sh
 !gtklock/**/*
+!cava/**/*
 !.gitignore
 !todoist-flags.conf
 !limits.conf
