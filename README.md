@@ -19,6 +19,7 @@
 * GTK Theme - Colloid-Dark
 * GTK Icons - Colloid-Dark
 * GTK Cursor - elementary
+* SDDM - sddm-astronaut-theme customized
 * bahsrc prompt - My own
 * Fonts - Segoe UI & CaskaydiaCove
 * Other - Black & White contrast
