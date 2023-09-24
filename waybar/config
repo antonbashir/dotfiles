@@ -7,7 +7,7 @@
 	"margin-bottom": 0,
 
   "modules-left": [
-    "clock",
+    "custom/powermenu",
     "custom/separator",
     "cpu",
     "temperature",
@@ -26,8 +26,7 @@
     "custom/separator",
     "network",
     "custom/separator",
-    "custom/powermenu",
-    "custom/separator"
+    "clock"
   ],
 
   "clock": {
