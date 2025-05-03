@@ -1,5 +1,5 @@
-[tasks."backup:gitea"]
-run = "sudo bash $HOME/development/sandbox/actions/backup-gitea.sh"
+[tasks."backup:repository"]
+run = "sudo bash $HOME/development/sandbox/actions/backup-repository.sh"
 
 [tasks."backup:storages"]
 run = "sudo bash $HOME/development/sandbox/actions/backup-storages.sh"
@@ -11,7 +11,10 @@ run = "bash $HOME/development/sandbox/actions/currency-bot.sh"
 run = 'bash $HOME/development/sandbox/actions/light.sh'
 
 [tasks.backup]
-depends = ["backup:storages", "backup:gitea"]
+depends = ["backup:storages", "backup:repository"]
+
+[tasks."repository:refresh"]
+run = 'bash $HOME/development/sandbox/actions/repository-refresh.sh'
 
 [tasks."services:refresh"]
 run = 'bash $HOME/development/sandbox/actions/services-refresh.sh'
