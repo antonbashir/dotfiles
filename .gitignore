@@ -33,6 +33,9 @@
 !xsettingsd/**/*
 !rofi/**/*
 !refind/**/*
+!mise/*
+!mise/**
+!mise
 !code-flags.conf
 !spotify-flags.conf
 !sddm-install.sh
