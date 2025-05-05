@@ -1,17 +1,11 @@
-[tasks."backup:repository"]
-run = "sudo bash $HOME/development/sandbox/actions/backup-repository.sh"
-
-[tasks."backup:storages"]
-run = "sudo bash $HOME/development/sandbox/actions/backup-storages.sh"
+[tasks.backup]
+run = "sudo bash $HOME/development/sandbox/actions/backup.sh"
 
 [tasks."bots:currency"]
 run = "bash $HOME/development/sandbox/actions/currency-bot.sh"
 
 [tasks.light]
 run = 'bash $HOME/development/sandbox/actions/light.sh'
-
-[tasks.backup]
-depends = ["backup:storages", "backup:repository"]
 
 [tasks."repository:refresh"]
 run = 'bash $HOME/development/sandbox/actions/repository-refresh.sh'
