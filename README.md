@@ -20,9 +20,10 @@
 * GTK Icons - Colloid-Dark
 * GTK Cursor - elementary
 * SDDM - sddm-astronaut-theme customized
-* bahsrc prompt - My own
+* [Prompt](https://github.com/antonbashir/workplace) - My own
 * Fonts - Segoe UI & CaskaydiaCove
 * Other - Black & White contrast
+* [VSCode + Obsidian](https://github.com/antonbashir/extensions)
 
 # Screenshots
 
