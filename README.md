@@ -20,11 +20,11 @@
 * GTK Icons - Colloid-Dark
 * GTK Cursor - elementary
 * SDDM - sddm-astronaut-theme customized
-* [Prompt](https://github.com/antonbashir/workplace) - My own
 * Fonts - Segoe UI & CaskaydiaCove
 * Other - Black & White contrast
 * [VSCode + Obsidian](https://github.com/antonbashir/extensions)
-
+* [Prompt](https://github.com/antonbashir/workplace)
+  
 # Screenshots
 
 ![](screenshots/1.png)
