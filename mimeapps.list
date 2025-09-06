@@ -1,0 +1,36 @@
+[Default Applications]
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/notion=notion-app.desktop
+image/png=viewnior.desktop
+x-scheme-handler/gitkraken=GitKraken.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
+x-scheme-handler/discord-424004941485572097=discord-424004941485572097.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/fleet=jetbrains-fleet.desktop
+x-scheme-handler/chrome=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+
+[Added Associations]
+image/png=viewnior.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/chrome=firefox.desktop;
+text/html=firefox.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;
+text/plain=code.desktop;
+application/vnd.ms-xpsdocument=code.desktop;

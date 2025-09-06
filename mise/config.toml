@@ -12,3 +12,6 @@ run = 'bash $HOME/development/sandbox/actions/repository-refresh.sh'
 
 [tasks."services:refresh"]
 run = 'bash $HOME/development/sandbox/actions/services-refresh.sh'
+
+[settings]
+trusted_config_paths = ["/"]

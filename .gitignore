@@ -18,9 +18,9 @@
 !gtklock/
 !cava/
 !backgrounds/**/*
-!gtk-2.0/**/*
-!gtk-3.0/**/*
-!gtk-4.0/**/*
+!gtk-2.0/*.ini
+!gtk-3.0/*.ini
+!gtk-4.0/*.ini
 !gtk-icons/**/*
 !gtk-theme/**/*
 !hypr/**/*
@@ -50,3 +50,8 @@
 !screenshots
 !screenshots/**/*
 !packages.list
+!obsidian-flags.conf
+!mimeapps.list
+!initramfs-theme.conf
+!electron-flags.conf
+!chrome-flags.conf
