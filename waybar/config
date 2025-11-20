@@ -63,7 +63,7 @@
   "disk#one": {
 		"states": {
 			"good": 0,
-			"warning": 70,
+			"warning": 80,
 			"critical": 95
 		},
 		"interval": 5,
