@@ -15,4 +15,3 @@ run = 'bash $HOME/development/sandbox/actions/services-refresh.sh'
 
 [settings]
 trusted_config_paths = ["/"]
-idiomatic_version_file_enable_tools = ["python"]
