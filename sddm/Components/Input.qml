@@ -203,7 +203,7 @@ Column {
       anchors.horizontalCenter: parent.horizontalCenter
       Image {
           id: avatarImg
-          source: "file:///home/anton/.face"
+          source: "file:///" + Qt.resolvedUrl("~/.face")
           width: 96
           height: 96
           fillMode: Image.PreserveAspectCrop
