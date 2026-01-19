@@ -1,5 +1,5 @@
 [tasks.backup]
-run = "sudo bash $HOME/development/sandbox/actions/backup.sh"
+run = "bash $HOME/development/sandbox/actions/backup.sh"
 
 [tasks."bots:currency"]
 run = "bash $HOME/development/sandbox/actions/currency-bot.sh"
