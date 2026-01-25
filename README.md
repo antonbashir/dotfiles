@@ -14,7 +14,7 @@
 * swww
 * mako
 
-# Themes
+## Themes
 
 * GTK Theme - Colloid-Dark
 * GTK Icons - Colloid-Dark
@@ -24,12 +24,12 @@
 * Fonts - Segoe UI & CaskaydiaCove
 * Other - Black & White contrast
 
-# Screenshots
+## Screenshots
 
-![](screenshots/1.png)
+![screenshot-1](screenshots/1.png)
 
-![](screenshots/2.png)
+![screenshot-2](screenshots/2.png)
 
-![](screenshots/3.png)
+![screenshot-3](screenshots/3.png)
 
-![](screenshots/4.png)
+![screenshot-4](screenshots/4.png)
