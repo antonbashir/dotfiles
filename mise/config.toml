@@ -1,3 +1,18 @@
+[settings]
+trusted_config_paths = ["/"]
+
+[tasks."unmount:backup"]
+run = "bash $HOME/development/sandbox/actions/unmount-backup.sh"
+
+[tasks."mount:backup"]
+run = "bash $HOME/development/sandbox/actions/mount-backup.sh"
+
+[tasks."unmount:cold"]
+run = "bash $HOME/development/sandbox/actions/unmount-cold.sh"
+
+[tasks."mount:cold"]
+run = "bash $HOME/development/sandbox/actions/mount-cold.sh"
+
 [tasks.backup]
 run = "bash $HOME/development/sandbox/actions/backup.sh"
 
@@ -12,6 +27,3 @@ run = 'bash $HOME/development/sandbox/actions/repository-refresh.sh'
 
 [tasks."services:refresh"]
 run = 'bash $HOME/development/sandbox/actions/services-refresh.sh'
-
-[settings]
-trusted_config_paths = ["/"]

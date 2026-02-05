@@ -1,9 +1,13 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun";
-    show-icons:                 true;
-    display-drun:               "";
+  show-icons:                 true;
+  display-drun:               "";
 	drun-display-format:        "{name}";
+  drun {
+    parse-user:   true;
+    parse-system: false;
+  }
 }
 
 /*****----- Global Properties -----*****/
