@@ -36,3 +36,6 @@ application/x-extension-xht=firefox.desktop;
 text/plain=code.desktop;
 application/vnd.ms-xpsdocument=code.desktop;
 application/x-shellscript=code.desktop;
+application/x-zerosize=code.desktop;
+application/postscript=gimp.desktop;com.google.Chrome.desktop;
+application/xml=micro.desktop;
