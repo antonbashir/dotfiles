@@ -54,3 +54,4 @@
 !initramfs-theme.conf
 !electron-flags.conf
 !chrome-flags.conf
+!user-dirs.dirs
