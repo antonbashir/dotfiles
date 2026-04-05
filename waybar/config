@@ -100,7 +100,8 @@
         "󰖀 ",
         "󰕾 "
       ]
-    }
+    },
+    "on-click": "pavucontrol"
   },
   "network": {
     "format-wifi":                 "    {essid}",
