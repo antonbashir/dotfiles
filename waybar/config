@@ -11,7 +11,8 @@
     "temperature",
     "memory",
     "disk#one",
-    "disk#two"
+    "disk#two",
+    "pulseaudio/slider"
   ],
   "modules-center": [],
   "modules-right": [
@@ -102,6 +103,11 @@
       ]
     },
     "on-click": "pavucontrol"
+  },
+  "pulseaudio/slider": {
+      "min": 0,
+      "max": 100,
+      "orientation": "horizontal"
   },
   "network": {
     "format-wifi":                 "    {essid}",

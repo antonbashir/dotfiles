@@ -71,3 +71,30 @@ window#waybar {
 #pulseaudio.muted {
   color: #ff5555;
 }
+
+#pulseaudio-slider {
+  padding: 8px;
+  margin: 0;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 100px;
+  border-radius: 12px;
+  background: #1A1A1A;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 1px;
+  border-radius: 12px;
+  background: #614AF3;
+}
