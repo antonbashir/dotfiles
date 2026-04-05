@@ -11,12 +11,12 @@
     "temperature",
     "memory",
     "disk#one",
-    "disk#two",
-    "pulseaudio/slider"
+    "disk#two"
   ],
   "modules-center": [],
   "modules-right": [
     "bluetooth",
+    "pulseaudio/slider",
     "pulseaudio",
     "network",
     "clock"
@@ -58,7 +58,7 @@
       "critical": 85
     },
     "interval": 5,
-    "format": "  {}%"
+    "format": "   {}%"
   },
   "disk#one": {
     "states": {
@@ -67,7 +67,7 @@
       "critical": 95
     },
     "interval": 5,
-    "format": "  {percentage_used:2}%",
+    "format": "   {percentage_used:2}%",
     "path": "/",
     "on-click": "gnome-disks"
   },
@@ -78,7 +78,7 @@
       "critical": 95
     },
     "interval": 5,
-    "format": "  {percentage_used:2}%",
+    "format": "   {percentage_used:2}%",
     "path": "/home/anton/external-storage",
     "on-click": "gnome-disks"
   },
