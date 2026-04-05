@@ -67,7 +67,8 @@
     },
     "interval": 5,
     "format": "  {percentage_used:2}%",
-    "path": "/"
+    "path": "/",
+    "on-click": "gnome-disks"
   },
   "disk#two": {
     "states": {
@@ -77,7 +78,8 @@
     },
     "interval": 5,
     "format": "  {percentage_used:2}%",
-    "path": "/home/anton/external-storage"
+    "path": "/home/anton/external-storage",
+    "on-click": "gnome-disks"
   },
   "pulseaudio": {
     "format":                 "{icon}  {volume}%  {format_source}",
