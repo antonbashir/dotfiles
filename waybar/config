@@ -1,36 +1,37 @@
 {
   "layer": "top",
-	"position": "bottom",
+  "position": "bottom",
   "margin-top": 0,
-	"margin-right": 0,
-	"margin-left": 0,
-	"margin-bottom": -1,
-
+  "margin-right": 0,
+  "margin-left": 0,
+  "margin-bottom": -1,
   "modules-left": [
     "custom/powermenu",
-    "custom/separator",
     "cpu",
     "temperature",
-    "custom/separator",
     "memory",
-    "custom/separator",
     "disk#one",
-    "custom/separator"
+    "disk#two"
   ],
-  "modules-center": [
-  ],
+  "modules-center": [],
   "modules-right": [
-    "tray",
-    "custom/separator",
+    "bluetooth",
     "pulseaudio",
-    "custom/separator",
     "network",
-    "custom/separator",
     "clock"
   ],
-
   "clock": {
-    "format": "  {:%d.%m.%y %H:%M}"
+    "format": "{:%d.%m.%y %H:%M:%S}",
+    "tooltip": false
+  },
+  "bluetooth": {
+	  "format": " {status}",
+	  "format-disabled": "",
+	  "format-connected": " {num_connections}",
+	  "tooltip-format": "{controller_alias}\t{controller_address}",
+	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
+	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager"
   },
   "cpu": {
     "states": {
@@ -39,8 +40,7 @@
       "critical": 90
     },
     "interval": 1,
-    "format": "    {usage:2}%",
-    "on-click": "foot -e btop"
+    "format": "    {usage:2}%"
   },
   "temperature": {
     "thermal-zone": 3,
@@ -57,55 +57,59 @@
       "critical": 85
     },
     "interval": 5,
-    "format": "  {}%",
-    "on-click": "foot -e btop"
+    "format": "  {}%"
   },
   "disk#one": {
-		"states": {
-			"good": 0,
-			"warning": 80,
-			"critical": 95
-		},
-		"interval": 5,
-		"format": "  {percentage_used:2}%",
-		"path": "/"
-	},
-
-  "tray": {
-    "icon-size": 16,
-    "spacing": 8
+    "states": {
+      "good": 0,
+      "warning": 80,
+      "critical": 95
+    },
+    "interval": 5,
+    "format": "  {percentage_used:2}%",
+    "path": "/"
+  },
+  "disk#two": {
+    "states": {
+      "good": 0,
+      "warning": 80,
+      "critical": 95
+    },
+    "interval": 5,
+    "format": "  {percentage_used:2}%",
+    "path": "/home/anton/external-storage"
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%   {format_source}",
-    "format-bluetooth": "{icon}    {volume}%  {format_source}",
-    "format-bluetooth-muted": "  {icon}  {format_source}",
-    "format-muted": "    {format_source}",
-    "format-source": "  {volume}%",
-    "format-source-muted": " ",
+    "format":                 "{icon}  {volume}%  {format_source}",
+    "format-bluetooth":       "{icon}  {volume}%  {format_source}",
+    "format-bluetooth-muted": "  {icon}  {format_source}",
+    "format-muted":           "  {format_source}",
+    "format-source":          "  {volume}%",
+    "format-source-muted":    "  ",
     "format-icons": {
-      "headphone": "󰋋 ",
+      "headphone":  "󰋋 ",
       "hands-free": " ",
-      "headset": "󰋎 ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
+      "headset":    "󰋎 ",
+      "phone":      " ",
+      "portable":   " ",
+      "car":        " ",
       "default": [
         "󰕿 ",
         "󰖀 ",
         "󰕾 "
       ]
-    },
-    "on-click": "pavucontrol"
+    }
   },
   "network": {
-    "format-wifi": "   {essid}",
-    "format-ethernet": "  {ifname} {ipaddr}",
-    "format-disconnected": "Disconnected",
-    "tooltip-format": "{ifname}",
-    "tooltip-format-wifi": "{ipaddr}",
-    "tooltip-format-ethernet": "{ipaddr}",
+    "format-wifi":                 "    {essid}",
+    "format-ethernet":             "  {ifname}  {ipaddr}",
+    "format-disconnected":         "Disconnected",
+    "tooltip-format":              "{ifname}",
+    "tooltip-format-wifi":         "{ipaddr}",
+    "tooltip-format-ethernet":     "{ipaddr}",
     "tooltip-format-disconnected": "Disconnected",
-    "interval": 30
+    "interval": 30,
+    "on-click": "nm-connection-editor"
   },
   "custom/powermenu": {
     "format": "",

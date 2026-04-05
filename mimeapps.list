@@ -39,3 +39,4 @@ application/x-shellscript=code.desktop;
 application/x-zerosize=code.desktop;
 application/postscript=gimp.desktop;com.google.Chrome.desktop;
 application/xml=micro.desktop;
+text/x-c++src=code-url-handler.desktop;

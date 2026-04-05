@@ -55,11 +55,6 @@ window#waybar {
   color: #ff5555;
 }
 
-#custom-separator {
-  opacity: 0;
-  padding: 0;
-}
-
 #battery.warning,
 #cpu.warning,
 #disk.one.warning,
@@ -75,8 +70,4 @@ window#waybar {
 #network.disconnected,
 #pulseaudio.muted {
   color: #ff5555;
-}
-
-#tray {
-  padding: 0px 0px 0px 0px;
 }
