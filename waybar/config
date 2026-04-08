@@ -13,7 +13,9 @@
     "disk#one",
     "disk#two"
   ],
-  "modules-center": [],
+  "modules-center": [
+    "tray"
+  ],
   "modules-right": [
     "bluetooth",
     "pulseaudio/slider",
@@ -24,6 +26,10 @@
   "clock": {
     "format": "{:%d.%m.%y %H:%M:%S}",
     "tooltip": false
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 12
   },
   "bluetooth": {
     "format":                             " {status}",
