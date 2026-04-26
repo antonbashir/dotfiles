@@ -2,31 +2,31 @@
 trusted_config_paths = ["/"]
 
 [tasks."unmount:backup"]
-run = "bash $HOME/development/sandbox/actions/unmount-backup.sh"
+run = "bash $HOME/development/infrastructure/actions/unmount-backup.sh"
 
 [tasks."mount:backup"]
-run = "bash $HOME/development/sandbox/actions/mount-backup.sh"
+run = "bash $HOME/development/infrastructure/actions/mount-backup.sh"
 
 [tasks."unmount:cold"]
-run = "bash $HOME/development/sandbox/actions/unmount-cold.sh"
+run = "bash $HOME/development/infrastructure/actions/unmount-cold.sh"
 
 [tasks."mount:cold"]
-run = "bash $HOME/development/sandbox/actions/mount-cold.sh"
+run = "bash $HOME/development/infrastructure/actions/mount-cold.sh"
 
 [tasks.backup]
-run = "bash $HOME/development/sandbox/actions/backup.sh"
+run = "bash $HOME/development/infrastructure/actions/backup.sh"
 
 [tasks."bots:currency"]
-run = "bash $HOME/development/sandbox/actions/currency-bot.sh"
+run = "bash $HOME/development/infrastructure/actions/currency-bot.sh"
 
 [tasks.light]
-run = 'bash $HOME/development/sandbox/actions/light.sh'
+run = 'bash $HOME/development/infrastructure/actions/light.sh'
 
 [tasks."repository:refresh"]
-run = 'bash $HOME/development/sandbox/actions/repository-refresh.sh'
+run = 'bash $HOME/development/infrastructure/actions/repository-refresh.sh'
 
 [tasks."services:refresh"]
-run = 'bash $HOME/development/sandbox/actions/services-refresh.sh'
+run = 'bash $HOME/development/infrastructure/actions/services-refresh.sh'
 
 [tasks."clang:format:all"]
 run = "find . -regex '.*\\.\\(cpp\\|hpp\\|cc\\|cxx\\|c\\|h\\)' -exec clang-format -style=file -i {} \\;"
