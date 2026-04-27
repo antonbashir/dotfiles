@@ -1,17 +1,15 @@
 # Components
 
-* OS Arch Linux
+* OS Arch Linux + CachyOS patches
+* Hyprland
 * kitty
 * waybar
-* hyprland
 * refind
 * rofi
-* sddm
-* gtklock
 * cliphist
 * nemo
 * grim + slurp
-* swww
+* awww
 * mako
 
 ## Themes
@@ -19,8 +17,7 @@
 * GTK Theme - Colloid-Dark
 * GTK Icons - Colloid-Dark
 * GTK Cursor - elementary
-* SDDM - sddm-astronaut-theme customized
-* bahsrc prompt - My own
+* Bash prompt - Own
 * Fonts - Segoe UI & CaskaydiaCove
 * Other - Black & White contrast
 
