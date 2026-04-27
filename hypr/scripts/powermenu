@@ -10,14 +10,12 @@ mesg="Uptime : `uptime -p | sed -e 's/up //g'`"
 layout=`cat ${RASI} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
     option_1=" Lock"
-    option_2=" Logout"
-    option_3="↺ Reboot"
-    option_4=" Shutdown"
+    option_2="↺ Reboot"
+    option_3=" Shutdown"
 else
     option_1=""
-    option_2=""
-    option_3="↺"
-    option_4=""
+    option_2="↺"
+    option_3=""
 fi
 cnflayout=`cat ${CNFR} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$cnflayout" == 'NO' ]]; then
@@ -37,7 +35,7 @@ rofi_cmd() {
 }
 
 run_rofi() {
-    echo -e "$option_1\n$option_2\n$option_3\n$option_4" | rofi_cmd
+    echo -e "$option_1\n$option_2\n$option_3" | rofi_cmd
 }
 
 confirm_cmd() {
@@ -54,7 +52,7 @@ confirm_exit() {
 confirm_run () {
     selected="$(confirm_exit)"
     if [[ "$selected" == "$yes" ]]; then
-        ${1} && ${2} && ${3} && ${4}
+        ${1} && ${2} && ${3}
     else
         exit
     fi
@@ -64,10 +62,8 @@ run_cmd() {
     if [[ "$1" == '--opt1' ]]; then
         loginctl lock-sessions
         elif [[ "$1" == '--opt2' ]]; then
-        confirm_run 'sudo systemctl restart sddm || exit; sudo loginctl kill-user $(whoami)'
-        elif [[ "$1" == '--opt3' ]]; then
         confirm_run 'systemctl reboot'
-        elif [[ "$1" == '--opt4' ]]; then
+        elif [[ "$1" == '--opt3' ]]; then
         confirm_run 'systemctl poweroff'
     fi
 }
@@ -82,8 +78,5 @@ case ${chosen} in
     ;;
     $option_3)
         run_cmd --opt3
-    ;;
-    $option_4)
-        run_cmd --opt4
     ;;
 esac
