@@ -1,6 +1,6 @@
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
-import QtQuick.Controls 2.4
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15
 import QtGraphicalEffects 1.0
 
 Column {
@@ -203,7 +203,7 @@ Column {
       anchors.horizontalCenter: parent.horizontalCenter
       Image {
           id: avatarImg
-          source: "file:///" + Qt.resolvedUrl("~/.face")
+          source: Qt.resolvedUrl("../Assets/Avatar.png")
           width: 96
           height: 96
           fillMode: Image.PreserveAspectCrop
