@@ -6,7 +6,6 @@
   "margin-left": 0,
   "margin-bottom": -1,
   "modules-left": [
-    "custom/powermenu",
     "cpu",
     "temperature",
     "memory",
@@ -124,10 +123,5 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 30,
     "on-click": "nm-connection-editor"
-  },
-  "custom/powermenu": {
-    "format": "",
-    "on-click": "nwg-bar",
-    "tooltip": false
   }
 }

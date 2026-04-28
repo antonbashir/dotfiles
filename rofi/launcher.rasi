@@ -84,8 +84,8 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     3;
-    lines:                       7;
+    columns:                     5;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -109,10 +109,10 @@ scrollbar {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     8px;
     margin:                      0px;
-    padding:                     6px;
-    border-radius:               0px;
+    padding:                     10px 8px 10px 8px;
+    border-radius:               8px;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
