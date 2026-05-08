@@ -7,7 +7,9 @@
   "margin-bottom": -1,
   "modules-left": [
     "cpu",
-    "temperature",
+    "temperature#cpu",
+    "custom/gpu-usage",
+    "custom/gpu-temperature",
     "memory",
     "disk#one",
     "disk#two"
@@ -31,11 +33,11 @@
     "spacing": 12
   },
   "bluetooth": {
-    "format":                             " {status}",
-    "format-disabled":                    "",
-    "format-connected":                   " {device_alias}",
-    "tooltip-format":                     "{controller_alias}\t{controller_address}",
-    "tooltip-format-connected":           "{controller_alias}\t{controller_address}\n{device_enumerate}",
+    "format": " {status}",
+    "format-disabled": "",
+    "format-connected": " {device_alias}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "on-click": "blueman-manager"
   },
@@ -46,14 +48,26 @@
       "critical": 90
     },
     "interval": 1,
-    "format": "    {usage:2}%"
+    "format": "    CPU: {usage:2} %"
   },
-  "temperature": {
+  "temperature#cpu": {
     "interval": 1,
     "hwmon-path": "/sys/devices/platform/asus-ec-sensors/hwmon/hwmon5/temp1_input",
     "critical-threshold": 90,
     "format-critical": "({temperatureC}°C)",
     "format": "({temperatureC}°C)"
+  },
+  "custom/gpu-temperature": {
+    "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+    "format": "({}°C)",
+    "return-type": "",
+    "interval": 1
+  },
+  "custom/gpu-usage": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+    "format": "GPU: {} %  ",
+    "return-type": "",
+    "interval": 1
   },
   "memory": {
     "states": {
@@ -87,19 +101,19 @@
     "on-click": "gnome-disks"
   },
   "pulseaudio": {
-    "format":                 "{icon}  {volume}%  {format_source}",
-    "format-bluetooth":       "{icon}  {volume}%  {format_source}",
+    "format": "{icon}  {volume}%  {format_source}",
+    "format-bluetooth": "{icon}  {volume}%  {format_source}",
     "format-bluetooth-muted": "  {icon}  {format_source}",
-    "format-muted":           "  {format_source}",
-    "format-source":          "  {volume}%",
-    "format-source-muted":    "  ",
+    "format-muted": "  {format_source}",
+    "format-source": "  {volume}%",
+    "format-source-muted": "  ",
     "format-icons": {
-      "headphone":  "󰋋 ",
+      "headphone": "󰋋 ",
       "hands-free": " ",
-      "headset":    "󰋎 ",
-      "phone":      " ",
-      "portable":   " ",
-      "car":        " ",
+      "headset": "󰋎 ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
       "default": [
         "󰕿 ",
         "󰖀 ",
@@ -109,17 +123,17 @@
     "on-click": "pavucontrol"
   },
   "pulseaudio/slider": {
-      "min": 0,
-      "max": 100,
-      "orientation": "horizontal"
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
   },
   "network": {
-    "format-wifi":                 "    {essid}",
-    "format-ethernet":             "  {ifname}  {ipaddr}",
-    "format-disconnected":         "Disconnected",
-    "tooltip-format":              "{ifname}",
-    "tooltip-format-wifi":         "{ipaddr}",
-    "tooltip-format-ethernet":     "{ipaddr}",
+    "format-wifi": "    {essid}",
+    "format-ethernet": "  {ifname}  {ipaddr}",
+    "format-disconnected": "Disconnected",
+    "tooltip-format": "{ifname}",
+    "tooltip-format-wifi": "{ipaddr}",
+    "tooltip-format-ethernet": "{ipaddr}",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 30,
     "on-click": "nm-connection-editor"
