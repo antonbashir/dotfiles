@@ -61,9 +61,9 @@ confirm_run () {
 run_cmd() {
     if [[ "$1" == '--opt1' ]]; then
         loginctl lock-sessions
-        elif [[ "$1" == '--opt2' ]]; then
+    elif [[ "$1" == '--opt2' ]]; then
         confirm_run 'systemctl reboot'
-        elif [[ "$1" == '--opt3' ]]; then
+    elif [[ "$1" == '--opt3' ]]; then
         confirm_run 'systemctl poweroff'
     fi
 }
