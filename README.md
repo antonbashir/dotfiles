@@ -1,6 +1,6 @@
 # Components
 
-* OS Arch Linux + CachyOS patches
+* OS Arch Linux + CachyOS kernel
 * Hyprland
 * kitty
 * waybar
@@ -10,13 +10,14 @@
 * nemo
 * grim + slurp
 * awww
+* lianwall
 * mako
 
 ## Themes
 
-* GTK Theme - Colloid-Dark
-* GTK Icons - Colloid-Dark
-* GTK Cursor - elementary
+* GTK Theme - Colloid Dark
+* GTK Icons - Colloid Dark
+* GTK Cursor - Catppuccin Mocha Dark Cursors
 * Bash prompt - Own
 * Fonts - Segoe UI & CaskaydiaCove
 * Other - Black & White contrast

@@ -1,0 +1,46 @@
+[paths]
+mode = "Video"
+video_dir = "~/videos/backgrounds"
+image_dir = "~/pictures/backgrounds"
+
+[video_engine]
+interval = 60
+display = "*"
+mpvpaper_args = []
+mpv_args = [
+    "--no-audio",
+    "--loop=inf",
+    "--hwdec=auto",
+    "--video-zoom=0",
+    "--panscan=1.0",
+]
+
+[image_engine]
+interval = 600
+outputs = ""
+swww_args = [
+    "--transition-type=fade",
+    "--transition-duration=2.0",
+    "--transition-fps=60",
+    "--transition-step=20",
+    "--resize=crop",
+]
+
+[algorithm]
+strategy = "clockwise_biased_softmax"
+bias_lambda = 0.35
+temperature = 0.28
+
+[vram]
+enabled = true
+threshold_percent = 25.0
+recovery_percent = 40.0
+check_interval = 2
+cooldown_seconds = 30
+backend = "auto"
+custom_command = ""
+
+[daemon]
+socket_path = "/tmp/lianwall.sock"
+pid_path = "/tmp/lianwall.pid"
+log_level = "info"
