@@ -15,6 +15,7 @@ application/x-extension-xht=firefox.desktop
 inode/directory=nemo.desktop
 x-scheme-handler/com.todoist=todoist.desktop
 x-scheme-handler/todoist=todoist.desktop
+application/vnd.microsoft.portable-executable=wine.desktop
 
 [Added Associations]
 image/png=viewnior.desktop;
@@ -36,3 +37,4 @@ application/x-zerosize=code.desktop;
 application/postscript=gimp.desktop;com.google.Chrome.desktop;
 application/xml=code.desktop;
 text/x-c++src=code-url-handler.desktop;
+application/vnd.microsoft.portable-executable=wine.desktop;
