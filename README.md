@@ -15,8 +15,8 @@
 
 ## Themes
 
-* GTK Theme - Colloid Dark
-* GTK Icons - Colloid Dark
+* GTK Theme - Colloid Blue Dark
+* GTK Icons - Lyra Blue Dark
 * GTK Cursor - Catppuccin Mocha Dark Cursors
 * Bash prompt - Own
 * Fonts - Segoe UI & CaskaydiaCove
