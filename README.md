@@ -12,6 +12,7 @@
 * awww
 * lianwall
 * mako
+* plymouth
 
 ## Themes
 
