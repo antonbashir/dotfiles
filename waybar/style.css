@@ -1,33 +1,56 @@
 * {
   border: none;
   border-radius: 0px;
-  font-family: "segoe ui variable static display";
+  font-family: "Segoe UI Variable Static Display", sans-serif;
   font-size: 14px;
   font-weight: bold;
   color: #FFFFFF;
 }
 
-window#waybar {
-  background: none;
-  color: #FFFFFF;
-  background-color: #0F0F0F;
-}
-
 #window {
   font-weight: bold;
-  font-family: "segoe ui variable static display";
 }
 
 #mode {
   background: transparent;
 }
 
+window#waybar {
+  background-color: rgba(15, 15, 15, 0.75);
+  color: #FFFFFF;
+  border-radius: 12px;
+}
+
 .modules-left,
 .modules-center,
 .modules-right {
-  border-radius: 0px;
-  margin: 0;
-  padding: 4px;
+  background-color: rgba(18, 18, 18, 1);
+  border-radius: 32px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.9);
+  padding: 8px;
+  margin: 8px 4px 8px 4px;
+}
+
+tooltip,
+menu {
+  background-color: rgba(15, 15, 15, 1);
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: #FFFFFF;
+  margin: 8px;
+}
+
+menu menuitem {
+  color: #FFFFFF;
+  padding: 8px;
+  margin: 2px;
+}
+
+menu menuitem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
 }
 
 #workspaces,
@@ -43,6 +66,39 @@ window#waybar {
 #taskbar,
 #tray {
   padding: 0px 8px 0 8px;
+}
+
+#pulseaudio-slider {
+  padding: 4px 8px;
+  margin: 4px;
+}
+
+#pulseaudio-slider slider {
+  min-height: 12px;
+  min-width: 12px;
+  opacity: 1;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+#pulseaudio-slider trough {
+  min-height: 6px; 
+  min-width: 100px;
+  border-radius: 32px;
+  background: #1A1A1A;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 1px;
+  border-radius: 32px;
+  background: #FFFFFF;
+}
+
+#pulseaudio:hover trough {
+  background: #242424; 
 }
 
 #temperature {
@@ -76,31 +132,4 @@ window#waybar {
 #network.disconnected,
 #pulseaudio.muted {
   color: #ff5555;
-}
-
-#pulseaudio-slider {
-  padding: 8px;
-  margin: 0;
-}
-
-#pulseaudio-slider slider {
-  min-height: 0px;
-  min-width: 0px;
-  opacity: 0;
-  background-image: none;
-  border: none;
-  box-shadow: none;
-}
-
-#pulseaudio-slider trough {
-  min-height: 10px;
-  min-width: 100px;
-  border-radius: 12px;
-  background: #1A1A1A;
-}
-
-#pulseaudio-slider highlight {
-  min-width: 1px;
-  border-radius: 12px;
-  background: #FFFFFF;
 }
