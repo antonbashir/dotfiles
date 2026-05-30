@@ -5,6 +5,9 @@
 !gtk-icons/
 !gtk-theme/
 !hypr/
+!hyprshade/
+!hyprshade/*
+!hyprshade/**/*
 !kitty/
 !mako/
 !neofetch/
