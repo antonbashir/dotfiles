@@ -6,7 +6,7 @@ uniform sampler2D tex;
 out vec4 fragColor;
 
 const vec3 rgbBalance = vec3(1.0, 1.0, 1.0);
-const float vibranceStrength = 0.15;
+const float vibranceStrength = 0.10;
 const float saturationThreshold = 0.15;
 const vec3 vibranceCoeffient = rgbBalance * -vibranceStrength;
 
