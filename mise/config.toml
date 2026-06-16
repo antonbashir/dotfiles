@@ -29,7 +29,9 @@ run = 'bash $HOME/development/infrastructure/actions/repository-refresh.sh'
 run = 'bash $HOME/development/infrastructure/actions/services-refresh.sh'
 
 [tasks."clang:format:all"]
-run = "find . -regex '.*\\.\\(cpp\\|hpp\\|cc\\|cxx\\|c\\|h\\)' -exec clang-format -style=file -i {} \\;"
+run = "find . -regex '.*\\.\\(c++\\cpp\\|hpp\\|cc\\|cxx\\|c\\|h\\)' -exec clang-format -style=file -i {} \\;"
 
 [tasks."clang:format:configure"]
 run = "cp $HOME/.clang-format {{cwd}}"
+
+[env]
