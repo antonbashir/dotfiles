@@ -5,9 +5,9 @@ local powermenu   = "~/.config/hypr/scripts/powermenu"
 local volume      = "~/.config/hypr/scripts/volume"
 local superKey    = "SUPER"
 
-hl.monitor({ output = "DP-1", mode = "5120x2880", position = "0x0", scale = "2" })
-hl.monitor({ output = "DP-2", mode = "5120x2880", position = "2560x0", scale = "2" })
-hl.monitor({ output = "DP-3", mode = "5120x2880", position = "5120x0", scale = "2" })
+hl.monitor({ output = "DP-1", mode = "5120x2880", refresh_rate = "60", position = "0x0", scale = "2" })
+hl.monitor({ output = "DP-2", mode = "5120x2880", refresh_rate = "60", position = "2560x0", scale = "2" })
+hl.monitor({ output = "DP-3", mode = "3840x2160", refresh_rate = "60", position = "5120x0", scale = "1.25" })
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("hyprctl setcursor catppuccin-mocha-dark-cursors 24")
