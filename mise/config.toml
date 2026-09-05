@@ -1,17 +1,17 @@
 [settings]
 trusted_config_paths = ["/"]
 
-[tasks."unmount:backup"]
-run = "bash $HOME/development/infrastructure/actions/unmount-backup.sh"
-
 [tasks."mount:backup"]
 run = "bash $HOME/development/infrastructure/actions/mount-backup.sh"
 
-[tasks."unmount:cold"]
-run = "bash $HOME/development/infrastructure/actions/unmount-cold.sh"
+[tasks."unmount:backup"]
+run = "bash $HOME/development/infrastructure/actions/unmount-backup.sh"
 
 [tasks."mount:cold"]
 run = "bash $HOME/development/infrastructure/actions/mount-cold.sh"
+
+[tasks."unmount:cold"]
+run = "bash $HOME/development/infrastructure/actions/unmount-cold.sh"
 
 [tasks.backup]
 run = "bash $HOME/development/infrastructure/actions/backup.sh"
@@ -19,8 +19,11 @@ run = "bash $HOME/development/infrastructure/actions/backup.sh"
 [tasks."bots:currency"]
 run = "bash $HOME/development/infrastructure/actions/currency-bot.sh"
 
-[tasks.light]
-run = 'bash $HOME/development/infrastructure/actions/light.sh'
+[tasks."wallpapers:start"]
+run = 'lianwall start'
+
+[tasks."wallpapers:stop"]
+run = 'lianwall stop'
 
 [tasks."repository:refresh"]
 run = 'bash $HOME/development/infrastructure/actions/repository-refresh.sh'
@@ -33,5 +36,3 @@ run = "find . -regex '.*\\.\\(c++\\cpp\\|hpp\\|cc\\|cxx\\|c\\|h\\)' -exec clang-
 
 [tasks."clang:format:configure"]
 run = "cp $HOME/.clang-format {{cwd}}"
-
-[env]
