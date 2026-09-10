@@ -33,6 +33,8 @@ run = 'bash $HOME/development/infrastructure/actions/services-refresh.sh'
 
 [tasks."clang:format:all"]
 run = "find . -regex '.*\\.\\(c++\\cpp\\|hpp\\|cc\\|cxx\\|c\\|h\\)' -exec clang-format -style=file -i {} \\;"
+dir = "{{cwd}}"
 
 [tasks."clang:format:configure"]
 run = "cp $HOME/.clang-format {{cwd}}"
+dir = "{{cwd}}"
