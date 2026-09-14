@@ -1,46 +1,57 @@
 [paths]
+image_dir = "~/pictures/backgrounds"
 mode = "Video"
 video_dir = "~/videos/backgrounds"
-image_dir = "~/pictures/backgrounds"
 
 [video_engine]
-interval = 60
 display = "*"
-mpvpaper_args = []
+interval = 60
 mpv_args = [
-    "--no-audio",
-    "--loop=inf",
-    "--hwdec=auto",
-    "--video-zoom=0",
-    "--panscan=1.0",
+  "--sws-scaler=fast-bilinear",
+  "--scale=bilinear",
+  "--dscale=bilinear",
+  "--cscale=bilinear",
+  "--profile=fast",
+  "--gpu-api=vulkan",
+  "--deband=no",
+  "--dither=no",
+  "--interpolation=no",
+  "--no-audio",
+  "--loop=inf",
+  "--hwdec=auto",
+  "--video-zoom=0",
+  "--panscan=1.0",
+]
+mpvpaper_args = [
+  "--profile=wallpaper",
 ]
 
 [image_engine]
 interval = 600
 outputs = ""
 swww_args = [
-    "--transition-type=fade",
-    "--transition-duration=2.0",
-    "--transition-fps=60",
-    "--transition-step=20",
-    "--resize=crop",
+  "--transition-type=fade",
+  "--transition-duration=2.0",
+  "--transition-fps=60",
+  "--transition-step=20",
+  "--resize=crop",
 ]
 
 [algorithm]
-strategy = "clockwise_biased_softmax"
 bias_lambda = 0.35
+strategy = "clockwise_biased_softmax"
 temperature = 0.28
 
 [vram]
-enabled = true
-threshold_percent = 25.0
-recovery_percent = 40.0
+backend = "auto"
 check_interval = 2
 cooldown_seconds = 30
-backend = "auto"
 custom_command = ""
+enabled = true
+recovery_percent = 40.0
+threshold_percent = 25.0
 
 [daemon]
-socket_path = "/tmp/lianwall.sock"
-pid_path = "/tmp/lianwall.pid"
 log_level = "info"
+pid_path = "/tmp/lianwall.pid"
+socket_path = "/tmp/lianwall.sock"
