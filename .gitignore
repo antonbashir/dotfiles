@@ -59,3 +59,4 @@
 !lianwall
 !lianwall/*
 !lianwall/**
+!.clang-format
