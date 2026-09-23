@@ -30,6 +30,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("pactl load-module module-switch-on-connect")
   hl.exec_cmd("lianwall start")
   hl.exec_cmd("hypridle")
+  hl.exec_cmd("hyprshade on vibrance")
 end)
 
 hl.exec_cmd("hyprshade on vibrance")
