@@ -1,10 +1,7 @@
-local terminal    = "kitty"
-local fileManager = "nemo"
-local launcher    = "~/.config/hypr/scripts/launcher"
-local powermenu   = "~/.config/hypr/scripts/powermenu"
-local volume      = "~/.config/hypr/scripts/volume"
-local xdg         = "~/.config/hypr/scripts/xdg-portal"
-local superKey    = "SUPER"
+local launcher  = "~/.config/hypr/scripts/launcher"
+local powermenu = "~/.config/hypr/scripts/powermenu"
+local volume    = "~/.config/hypr/scripts/volume"
+local xdg       = "~/.config/hypr/scripts/xdg-portal"
 
 hl.monitor({ output = "DP-1", mode = "5120x2880@60", position = "0x0", scale = "2" })
 hl.monitor({ output = "DP-2", mode = "5120x2880@60", position = "2560x0", scale = "2" })
@@ -121,37 +118,38 @@ hl.bind("code:210", hl.dsp.exec_cmd("asusctl led-mode -n"))
 
 hl.bind("f4", hl.dsp.exec_cmd(launcher))
 hl.bind("print", hl.dsp.exec_cmd("grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
-hl.bind("CTRL + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi | cliphist decode | wl-copy"))
-hl.bind(superKey .. " + B", hl.dsp.exec_cmd("killall waybar || waybar"))
-hl.bind(superKey .. " + SPACE", hl.dsp.exec_cmd(launcher))
-hl.bind(superKey .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(superKey .. " + J", hl.dsp.layout("togglesplit"))
-hl.bind(superKey .. " + V", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "unset" }))
-hl.bind(superKey .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(superKey .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind(superKey .. " + W", hl.dsp.window.close())
-hl.bind(superKey .. " + L", hl.dsp.exec_cmd("loginctl lock-sessions"))
-hl.bind(superKey .. " + M", hl.dsp.exec_cmd(powermenu))
-hl.bind(superKey .. " + P", hl.dsp.window.pseudo())
-hl.bind(superKey .. " + S", hl.dsp.exec_cmd("pkill grim; grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
-hl.bind(superKey .. " + F", hl.dsp.window.fullscreen(0))
-hl.bind(superKey .. " + N", hl.dsp.window.fullscreen(2))
+hl.bind("CTRL + SHIFT + V",
+hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi | cliphist decode | wl-copy"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("killall waybar || waybar"))
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd(launcher))
+hl.bind("SUPER + E", hl.dsp.exec_cmd("nemo"))
+hl.bind("SUPER + J", hl.dsp.layout("togglesplit"))
+hl.bind("SUPER + V", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "unset" }))
+hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"))
+hl.bind("SUPER + W", hl.dsp.window.close())
+hl.bind("SUPER + L", hl.dsp.exec_cmd("loginctl lock-sessions"))
+hl.bind("SUPER + M", hl.dsp.exec_cmd(powermenu))
+hl.bind("SUPER + P", hl.dsp.window.pseudo())
+hl.bind("SUPER + S", hl.dsp.exec_cmd("pkill grim; grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
+hl.bind("SUPER + F", hl.dsp.window.fullscreen(0))
+hl.bind("SUPER + N", hl.dsp.window.fullscreen(2))
 
-hl.bind(superKey .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(superKey .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(superKey .. " + up", hl.dsp.focus({ direction = "up" }))
-hl.bind(superKey .. " + down", hl.dsp.focus({ direction = "down" }))
+hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
+hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
+hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
+hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
 
-hl.bind(superKey .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(superKey .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
-hl.bind(superKey .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(superKey .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 for index = 1, 10 do
   local key = index % 10
-  hl.bind(superKey .. " + " .. key, hl.dsp.focus({ workspace = index }))
-  hl.bind(superKey .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = index }))
+  hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = index }))
+  hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = index }))
 end
 
 local float_applications = {
