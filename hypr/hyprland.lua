@@ -71,6 +71,7 @@ hl.config({
   misc = {
     disable_hyprland_logo = true,
     disable_splash_rendering = true,
+    disable_watchdog_warning = true,
     vrr = 0,
     allow_session_lock_restore = true,
     enable_anr_dialog = false,
@@ -120,7 +121,8 @@ hl.bind("code:210", hl.dsp.exec_cmd("asusctl led-mode -n"))
 
 hl.bind("f4", hl.dsp.exec_cmd(launcher))
 hl.bind("print", hl.dsp.exec_cmd("grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
-hl.bind("CTRL + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi | cliphist decode | wl-copy"))
+hl.bind("CTRL + SHIFT + V",
+hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi | cliphist decode | wl-copy"))
 
 hl.bind(superKey .. " + B", hl.dsp.exec_cmd("killall waybar || waybar"))
 hl.bind(superKey .. " + SPACE", hl.dsp.exec_cmd(launcher))
