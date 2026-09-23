@@ -1,6 +1,6 @@
 Language: Cpp
 Standard: c++20
-ColumnLimit: 200
+ColumnLimit: 250
 AlignAfterOpenBracket: BlockIndent
 AccessModifierOffset: -1
 AlignArrayOfStructures: None
@@ -80,18 +80,19 @@ AllowShortCaseExpressionOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortCompoundRequirementOnASingleLine: true
 AllowShortEnumsOnASingleLine: true
-AllowShortBlocksOnASingleLine: Empty
-AllowShortFunctionsOnASingleLine: Empty
-AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortBlocksOnASingleLine: Always
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: false
 AllowShortLambdasOnASingleLine: All
-AllowShortLoopsOnASingleLine: true
+AllowShortLoopsOnASingleLine: false
 AllowShortNamespacesOnASingleLine: false
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: true
-AlwaysBreakTemplateDeclarations: Yes
+AlwaysBreakTemplateDeclarations: No
 AttributeMacros:
-  - __capability
+  - likely
+  - unlikely
   - absl_nonnull
   - absl_nullable
   - absl_nullability_unknown
@@ -146,7 +147,7 @@ BreakConstructorInitializersBeforeComma: false
 BreakFunctionDefinitionParameters: false
 BreakInheritanceList: AfterColon
 BreakStringLiterals: true
-BreakTemplateDeclarations: Yes
+BreakTemplateDeclarations: No
 CommentPragmas: "^ IWYU pragma:"
 CompactNamespaces: false
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
@@ -174,7 +175,7 @@ IncludeCategories:
     Priority: 2
   - Regex: ".*"
     Priority: 3
-IncludeIsMainRegex: "([-_](test|unittest))?$"
+IncludeIsMainRegex: "([-_](test))?$"
 IncludeIsMainSourceRegex: ""
 IndentAccessModifiers: true
 IndentCaseBlocks: false
@@ -186,7 +187,7 @@ IndentPPDirectives: BeforeHash
 IndentRequiresClause: true
 IndentWidth: 4
 IndentWrappedFunctionNames: false
-InsertBraces: false
+InsertBraces: true
 InsertNewlineAtEOF: false
 InsertTrailingCommas: None
 IntegerLiteralSeparator:
