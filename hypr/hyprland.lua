@@ -6,9 +6,9 @@ local volume      = "~/.config/hypr/scripts/volume"
 local xdg         = "~/.config/hypr/scripts/xdg-portal"
 local superKey    = "SUPER"
 
-hl.monitor({ output = "DP-1", mode = "5120x2880", position = "0x0", scale = "2" })
-hl.monitor({ output = "DP-2", mode = "5120x2880", position = "2560x0", scale = "2" })
-hl.monitor({ output = "DP-3", mode = "3840x2160", position = "5120x0", scale = "1.25" })
+hl.monitor({ output = "DP-1", mode = "5120x2880@60", position = "0x0", scale = "2" })
+hl.monitor({ output = "DP-2", mode = "5120x2880@60", position = "2560x0", scale = "2" })
+hl.monitor({ output = "DP-3", mode = "3840x2160@60", position = "5120x0", scale = "1.25" })
 
 hl.env("GTK_THEME", "Colloid-Dark")
 hl.env("HYPRCURSOR_THEME", "catppuccin-mocha-dark-cursors")
