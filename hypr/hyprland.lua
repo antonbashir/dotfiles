@@ -54,14 +54,14 @@ hl.config({
   },
 
   decoration = {
-    rounding = 16,
+    rounding = 32,
     rounding_power = 8.0,
     blur = {
       enabled = false,
     },
     shadow = {
       enabled = true,
-      range = 32,
+      range = 24,
       render_power = 16,
       color = "rgba(7734ebff)",
       color_inactive = "rgba(0892d0ff)",
@@ -126,7 +126,7 @@ hl.bind(superKey .. " + B", hl.dsp.exec_cmd("killall waybar || waybar"))
 hl.bind(superKey .. " + SPACE", hl.dsp.exec_cmd(launcher))
 hl.bind(superKey .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(superKey .. " + J", hl.dsp.layout("togglesplit"))
-hl.bind(superKey .. " + V", hl.dsp.window.fullscreen(0))
+hl.bind(superKey .. " + V", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "unset" }))
 hl.bind(superKey .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(superKey .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(superKey .. " + W", hl.dsp.window.close())
