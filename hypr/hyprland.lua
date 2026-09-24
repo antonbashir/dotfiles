@@ -96,10 +96,10 @@ hl.config({
   },
 })
 
-hl.curve("myBezier", { type = "bezier", points = { { 0.10, 0.9 }, { 0.1, 1.05 } } })
+hl.curve("bezier", { type = "bezier", points = { { 0.10, 0.9 }, { 0.1, 1.05 } } })
 
-hl.animation({ leaf = "windows", enabled = true, speed = 7, bezier = "myBezier", style = "slide" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 7, bezier = "myBezier", style = "slide" })
+hl.animation({ leaf = "windows", enabled = true, speed = 7, bezier = "bezier", style = "slide" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 7, bezier = "bezier", style = "slide" })
 hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "default" })
 hl.animation({ leaf = "fade", enabled = true, speed = 7, bezier = "default" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default" })
@@ -118,8 +118,7 @@ hl.bind("code:210", hl.dsp.exec_cmd("asusctl led-mode -n"))
 
 hl.bind("f4", hl.dsp.exec_cmd(launcher))
 hl.bind("print", hl.dsp.exec_cmd("grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
-hl.bind("CTRL + SHIFT + V",
-hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi | cliphist decode | wl-copy"))
+hl.bind("CTRL + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi | cliphist decode | wl-copy"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("killall waybar || waybar"))
 hl.bind("SUPER + SPACE", hl.dsp.exec_cmd(launcher))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("nemo"))
