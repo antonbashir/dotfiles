@@ -23,6 +23,9 @@ mpv_args = [
   "--panscan=1.0",
 ]
 mpvpaper_args = [
+  "-p",
+  "-s",
+  "-f",
   "--profile=wallpaper",
 ]
 
