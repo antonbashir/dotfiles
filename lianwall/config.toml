@@ -5,7 +5,7 @@ video_dir = "~/videos/backgrounds"
 
 [video_engine]
 display = "*"
-interval = 120
+interval = 30
 mpv_args = [
   "--sws-scaler=fast-bilinear",
   "--scale=bilinear",
@@ -23,8 +23,6 @@ mpv_args = [
   "--panscan=1.0",
 ]
 mpvpaper_args = [
-  "-p",
-  "-s",
   "--profile=wallpaper",
 ]
 
