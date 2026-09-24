@@ -25,7 +25,6 @@ mpv_args = [
 mpvpaper_args = [
   "-p",
   "-s",
-  "-f",
   "--profile=wallpaper",
 ]
 
