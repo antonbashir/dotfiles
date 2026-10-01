@@ -60,3 +60,5 @@
 !lianwall/*
 !lianwall/**
 !.clang-format
+!scripts/
+!scripts/*

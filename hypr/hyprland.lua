@@ -1,38 +1,10 @@
-local launcher  = "~/.config/hypr/scripts/launcher"
-local powermenu = "~/.config/hypr/scripts/powermenu"
-local volume    = "~/.config/hypr/scripts/volume"
-local xdg       = "~/.config/hypr/scripts/xdg-portal"
+local launcher   = "~/.config/scripts/launcher"
+local powermenu  = "~/.config/scripts/powermenu"
+local volume     = "~/.config/scripts/volume"
+local xdg        = "~/.config/scripts/xdg-portal"
+local compositor = hl;
 
-hl.monitor({ output = "DP-1", mode = "5120x2880@60", position = "0x0", scale = "2" })
-hl.monitor({ output = "DP-2", mode = "5120x2880@60", position = "2560x0", scale = "2" })
-hl.monitor({ output = "DP-3", mode = "3840x2160@60", position = "5120x0", scale = "1.25" })
-
-hl.env("GTK_THEME", "Colloid-Dark")
-hl.env("HYPRCURSOR_THEME", "catppuccin-mocha-dark-cursors")
-hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("XCURSOR_SIZE", "24")
-
-hl.on("hyprland.start", function()
-  hl.exec_cmd("hyprctl setcursor catppuccin-mocha-dark-cursors 24")
-  hl.exec_cmd("hyprlock --grace 0 --immediate-render --no-fade-in")
-  hl.exec_cmd(xdg)
-  hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-  hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-  hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-  hl.exec_cmd("mako")
-  hl.exec_cmd("blueman-applet")
-  hl.exec_cmd("nm-applet --indicator")
-  hl.exec_cmd("wl-paste --type text --watch cliphist store")
-  hl.exec_cmd("wl-paste --type image --watch cliphist store")
-  hl.exec_cmd("pactl load-module module-switch-on-connect")
-  hl.exec_cmd("lianwall start")
-  hl.exec_cmd("hypridle")
-  hl.exec_cmd("hyprshade on vibrance")
-end)
-
-hl.exec_cmd("hyprshade on vibrance")
-
-hl.config({
+compositor.config({
   debug = {
     disable_scale_checks = true,
     enable_stdout_logs = false,
@@ -96,59 +68,90 @@ hl.config({
   },
 })
 
-hl.curve("bezier", { type = "bezier", points = { { 0.10, 0.9 }, { 0.1, 1.05 } } })
+compositor.monitor({ output = "DP-1", mode = "5120x2880@60", position = "0x0", scale = "2" })
+compositor.monitor({ output = "DP-2", mode = "5120x2880@60", position = "2560x0", scale = "2" })
+compositor.monitor({ output = "DP-3", mode = "3840x2160@60", position = "5120x0", scale = "1.25" })
 
-hl.animation({ leaf = "windows", enabled = true, speed = 7, bezier = "bezier", style = "slide" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 7, bezier = "bezier", style = "slide" })
-hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "fade", enabled = true, speed = 7, bezier = "default" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default" })
+compositor.env("GTK_THEME", "Colloid-Dark")
+compositor.env("HYPRCURSOR_THEME", "catppuccin-mocha-dark-cursors")
+compositor.env("HYPRCURSOR_SIZE", "24")
+compositor.env("XCURSOR_SIZE", "24")
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(volume .. " --inc"))
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(volume .. " --dec"))
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(volume .. " --toggle"))
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(volume .. " --toggle-mic"))
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
+compositor.on("hyprland.start", function()
+  compositor.exec_cmd("hyprctl setcursor catppuccin-mocha-dark-cursors 24")
+  compositor.exec_cmd("hyprlock --grace 0 --immediate-render --no-fade-in")
+  compositor.exec_cmd(xdg)
+  compositor.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+  compositor.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+  compositor.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+  compositor.exec_cmd("mako")
+  compositor.exec_cmd("blueman-applet")
+  compositor.exec_cmd("nm-applet --indicator")
+  compositor.exec_cmd("wl-paste --type text --watch cliphist store")
+  compositor.exec_cmd("wl-paste --type image --watch cliphist store")
+  compositor.exec_cmd("pactl load-module module-switch-on-connect")
+  compositor.exec_cmd("lianwall start")
+  compositor.exec_cmd("hypridle")
+  compositor.exec_cmd("hyprshade on vibrance")
+end)
 
-hl.bind("code:156", hl.dsp.exec_cmd("rog-control-center"))
-hl.bind("code:211", hl.dsp.exec_cmd("asusctl profile -n"))
-hl.bind("code:210", hl.dsp.exec_cmd("asusctl led-mode -n"))
+compositor.exec_cmd("hyprshade on vibrance")
 
-hl.bind("f4", hl.dsp.exec_cmd(launcher))
-hl.bind("print", hl.dsp.exec_cmd("grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
-hl.bind("CTRL + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi | cliphist decode | wl-copy"))
-hl.bind("SUPER + B", hl.dsp.exec_cmd("killall waybar || waybar"))
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd(launcher))
-hl.bind("SUPER + E", hl.dsp.exec_cmd("nemo"))
-hl.bind("SUPER + J", hl.dsp.layout("togglesplit"))
-hl.bind("SUPER + V", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "unset" }))
-hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"))
-hl.bind("SUPER + W", hl.dsp.window.close())
-hl.bind("SUPER + L", hl.dsp.exec_cmd("loginctl lock-sessions"))
-hl.bind("SUPER + M", hl.dsp.exec_cmd(powermenu))
-hl.bind("SUPER + P", hl.dsp.window.pseudo())
-hl.bind("SUPER + S", hl.dsp.exec_cmd("pkill grim; grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
-hl.bind("SUPER + F", hl.dsp.window.fullscreen(0))
-hl.bind("SUPER + N", hl.dsp.window.fullscreen(2))
+compositor.curve("bezier", { type = "bezier", points = { { 0.10, 0.9 }, { 0.1, 1.05 } } })
 
-hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
-hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
-hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
-hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
+compositor.animation({ leaf = "windows", enabled = true, speed = 7, bezier = "bezier", style = "slide" })
+compositor.animation({ leaf = "windowsOut", enabled = true, speed = 7, bezier = "bezier", style = "slide" })
+compositor.animation({ leaf = "border", enabled = true, speed = 10, bezier = "default" })
+compositor.animation({ leaf = "fade", enabled = true, speed = 7, bezier = "default" })
+compositor.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default" })
 
-hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+compositor.bind("XF86AudioRaiseVolume", compositor.dsp.exec_cmd(volume .. " --inc"))
+compositor.bind("XF86AudioLowerVolume", compositor.dsp.exec_cmd(volume .. " --dec"))
+compositor.bind("XF86AudioMute", compositor.dsp.exec_cmd(volume .. " --toggle"))
+compositor.bind("XF86AudioMicMute", compositor.dsp.exec_cmd(volume .. " --toggle-mic"))
+compositor.bind("XF86AudioNext", compositor.dsp.exec_cmd("playerctl next"))
+compositor.bind("XF86AudioPrev", compositor.dsp.exec_cmd("playerctl previous"))
+compositor.bind("XF86AudioPlay", compositor.dsp.exec_cmd("playerctl play-pause"))
 
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
+compositor.bind("code:156", compositor.dsp.exec_cmd("rog-control-center"))
+compositor.bind("code:211", compositor.dsp.exec_cmd("asusctl profile -n"))
+compositor.bind("code:210", compositor.dsp.exec_cmd("asusctl led-mode -n"))
+
+compositor.bind("f4", compositor.dsp.exec_cmd(launcher))
+compositor.bind("print", compositor.dsp.exec_cmd("grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
+
+compositor.bind("CTRL + SHIFT + V", compositor.dsp.exec_cmd("cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi | cliphist decode | wl-copy"))
+
+compositor.bind("SUPER + B", compositor.dsp.exec_cmd("killall waybar || waybar"))
+compositor.bind("SUPER + SPACE", compositor.dsp.exec_cmd(launcher))
+compositor.bind("SUPER + E", compositor.dsp.exec_cmd("nemo"))
+compositor.bind("SUPER + J", compositor.dsp.layout("togglesplit"))
+compositor.bind("SUPER + V", compositor.dsp.window.fullscreen({ mode = "fullscreen", action = "unset" }))
+compositor.bind("SUPER + V", compositor.dsp.window.float({ action = "toggle" }))
+compositor.bind("SUPER + Q", compositor.dsp.exec_cmd("kitty"))
+compositor.bind("SUPER + W", compositor.dsp.window.close())
+compositor.bind("SUPER + L", compositor.dsp.exec_cmd("loginctl lock-sessions"))
+compositor.bind("SUPER + M", compositor.dsp.exec_cmd(powermenu))
+compositor.bind("SUPER + P", compositor.dsp.window.pseudo())
+compositor.bind("SUPER + S", compositor.dsp.exec_cmd("pkill grim; grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
+compositor.bind("SUPER + F", compositor.dsp.window.fullscreen(0))
+compositor.bind("SUPER + N", compositor.dsp.window.fullscreen(2))
+
+compositor.bind("SUPER + left", compositor.dsp.focus({ direction = "left" }))
+compositor.bind("SUPER + right", compositor.dsp.focus({ direction = "right" }))
+compositor.bind("SUPER + up", compositor.dsp.focus({ direction = "up" }))
+compositor.bind("SUPER + down", compositor.dsp.focus({ direction = "down" }))
+
+compositor.bind("SUPER + mouse_down", compositor.dsp.focus({ workspace = "e+1" }))
+compositor.bind("SUPER + mouse_up", compositor.dsp.focus({ workspace = "e-1" }))
+
+compositor.bind("SUPER + mouse:272", compositor.dsp.window.drag(), { mouse = true })
+compositor.bind("SUPER + mouse:273", compositor.dsp.window.resize(), { mouse = true })
 
 for index = 1, 10 do
   local key = index % 10
-  hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = index }))
-  hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = index }))
+  compositor.bind("SUPER + " .. key, compositor.dsp.focus({ workspace = index }))
+  compositor.bind("SUPER + SHIFT + " .. key, compositor.dsp.window.move({ workspace = index }))
 end
 
 local float_applications = {
@@ -164,7 +167,7 @@ local float_applications = {
 }
 
 for _, application in ipairs(float_applications) do
-  hl.window_rule({
+  compositor.window_rule({
     match = { class = application.class },
     float = true,
     size = application.size,
@@ -172,31 +175,31 @@ for _, application in ipairs(float_applications) do
   })
 end
 
-hl.window_rule({
+compositor.window_rule({
   match = { class = "^(nemo)$" },
   float = true,
   animation = "popin",
 })
 
-hl.window_rule({
+compositor.window_rule({
   match = { class = "^(code|Code|vscode)$" },
   float = true,
 })
 
-hl.window_rule({
+compositor.window_rule({
   match = { class = "^(google-chrome|chrome|Chromium|firefox)$" },
   float = true,
   size = "1200 900",
 })
 
 
-hl.window_rule({
+compositor.window_rule({
   match = { class = "^(scrcpy)$" },
   float = true,
   center = true,
 })
 
-hl.window_rule({
+compositor.window_rule({
   match = { title = "^(Wine Desktop)$" },
   float = true,
   center = true,
