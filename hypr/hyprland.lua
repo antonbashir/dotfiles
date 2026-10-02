@@ -63,6 +63,7 @@ compositor.config({
     kb_options = "grp:lctrl_lwin_toggle",
     kb_rules = "",
     follow_mouse = 1,
+    float_switch_override_focus = 2,
     touchpad = { natural_scroll = false },
     sensitivity = 0,
   },
