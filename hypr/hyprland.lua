@@ -44,6 +44,7 @@ compositor.config({
     vrr = 0,
     allow_session_lock_restore = true,
     enable_anr_dialog = false,
+    on_focus_under_fullscreen = 1,
   },
 
   xwayland = {
