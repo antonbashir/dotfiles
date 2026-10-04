@@ -25,9 +25,6 @@ run = 'lianwall start'
 [tasks."wallpapers:stop"]
 run = 'lianwall stop'
 
-[tasks."repository:refresh"]
-run = 'bash $HOME/development/infrastructure/actions/repository-refresh.sh'
-
 [tasks."services:refresh"]
 run = 'bash $HOME/development/infrastructure/actions/services-refresh.sh'
 
