@@ -157,22 +157,25 @@ for index = 1, 10 do
 end
 
 local float_applications = {
-  { class = "^(kitty)$",                      size = "1000 700" },
-  { class = "^(org\\.telegram\\.desktop)$",   size = "1000 700" },
-  { class = "^(org.pulseaudio.pavucontrol)$", size = "700 500" },
-  { class = "^(blueman-manager)$",            size = "700 500" },
-  { class = "^(nm-connection-editor)$",       size = "700 500" },
-  { class = "^(org\\.gnome\\.FileRoller)$",   size = "700 500" },
-  { class = "^(org\\.gnome\\.DiskUtility)$",  size = "700 500" },
-  { class = "^(galculator)$",                 size = "500 700" },
-  { class = "^(Todoist)$",                    size = "700 500" },
+  { class = "^(kitty)$",                      size = { 1000, 700 } },
+  { class = "^(org\\.telegram\\.desktop)$",   size = { 1000, 700 } },
+  { class = "^(org.pulseaudio.pavucontrol)$", size = { 700, 500 } },
+  { class = "^(blueman-manager)$",            size = { 700, 500 } },
+  { class = "^(nm-connection-editor)$",       size = { 700, 500 } },
+  { class = "^(org\\.gnome\\.FileRoller)$",   size = { 700, 500 } },
+  { class = "^(org\\.gnome\\.DiskUtility)$",  size = { 700, 500 } },
+  { class = "^(galculator)$",                 size = { 500, 700 } },
+  { class = "^(todoist)$",                    size = { 700, 500 } },
 }
 
 for _, application in ipairs(float_applications) do
   compositor.window_rule({
     match = { class = application.class },
-    float = true,
     size = application.size,
+    float = true,
+    fullscreen_state = 0,
+    fullscreen = 0,
+    maximize = 0,
     animation = "popin",
   })
 end
@@ -191,9 +194,8 @@ compositor.window_rule({
 compositor.window_rule({
   match = { class = "^(google-chrome|chrome|Chromium|firefox)$" },
   float = true,
-  size = "1200 900",
+  size = { 1200, 900 },
 })
-
 
 compositor.window_rule({
   match = { class = "^(scrcpy)$" },
@@ -205,5 +207,5 @@ compositor.window_rule({
   match = { title = "^(Wine Desktop)$" },
   float = true,
   center = true,
-  size = "1000 700",
+  size = { 1000, 700 },
 })
