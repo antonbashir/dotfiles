@@ -171,12 +171,8 @@ local float_applications = {
 for _, application in ipairs(float_applications) do
   compositor.window_rule({
     match = { class = application.class },
-    size = application.size,
     float = true,
-    fullscreen_state = 0,
-    fullscreen = 0,
-    maximize = 0,
-    animation = "popin",
+    size = application.size,
   })
 end
 
