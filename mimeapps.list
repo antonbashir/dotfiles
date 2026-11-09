@@ -18,6 +18,8 @@ x-scheme-handler/todoist=todoist.desktop
 application/vnd.microsoft.portable-executable=wine.desktop
 x-scheme-handler/obsidian=md.obsidian.Obsidian.desktop
 x-scheme-handler/ton=org.telegram.desktop.desktop
+x-scheme-handler/opencode=ai.opencode.desktop.desktop
+x-scheme-handler/openchamber=openchamber.desktop
 
 [Added Associations]
 image/png=viewnior.desktop;
@@ -42,3 +44,4 @@ text/x-c++src=code-url-handler.desktop;
 application/vnd.microsoft.portable-executable=wine.desktop;
 x-scheme-handler/obsidian=md.obsidian.Obsidian.desktop;
 x-scheme-handler/ton=org.telegram.desktop.desktop;
+x-scheme-handler/openchamber=openchamber.desktop;

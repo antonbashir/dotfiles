@@ -173,6 +173,7 @@ for _, application in ipairs(float_applications) do
     match = { class = application.class },
     float = true,
     size = application.size,
+    animation = "popin",
   })
 end
 
@@ -185,23 +186,27 @@ compositor.window_rule({
 compositor.window_rule({
   match = { class = "^(code|Code|vscode)$" },
   float = true,
+  animation = "popin",
 })
 
 compositor.window_rule({
   match = { class = "^(google-chrome|chrome|Chromium|firefox)$" },
   float = true,
+  animation = "popin",
   size = { 1200, 900 },
 })
 
 compositor.window_rule({
   match = { class = "^(scrcpy)$" },
   float = true,
+  animation = "popin",
   center = true,
 })
 
 compositor.window_rule({
   match = { title = "^(Wine Desktop)$" },
   float = true,
+  animation = "popin",
   center = true,
   size = { 1000, 700 },
 })
