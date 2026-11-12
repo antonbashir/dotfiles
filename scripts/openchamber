@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+set -u
+
+APPLICATION="${APPLICATION:-$HOME/development/infrastructure/openchamber/OpenChamber.AppImage}"
+FULL_URL="${FULL_URL:-http://127.0.0.1:57123}"
+MINI_URL="$FULL_URL/mini-chat.html?mode=draft"
+CHROME_CLASS="chrome-127.0.0.1__mini-chat.html-Default"
+PROFILE="$HOME/.local/share/openchamber-mini/chrome-profile"
+CHROME="${CHROME:-google-chrome-stable}"
+
+find_window() {
+	hyprctl clients -j 2>/dev/null |
+		jq -r --arg c "$CHROME_CLASS" '.[] | select(.class == $c) | .address' |
+		head -n 1
+}
+
+window="$(find_window)"
+if [ -n "$window" ]; then
+	hyprctl dispatch "hl.dsp.focus({window=\"address:$window\"})" >/dev/null 2>&1
+	exit 0
+fi
+
+if ! curl -fsS --max-time 1 "$FULL_URL/health" >/dev/null 2>&1; then
+	if [ -x "$APPLICATION" ]; then
+		setsid "$APPLICATION" --background >/dev/null 2>&1 &
+	fi
+	for _ in $(seq 1 80); do
+		curl -fsS --max-time 1 "$FULL_URL/health" >/dev/null 2>&1 && break
+		sleep 0.5
+	done
+fi
+
+mkdir -p "$PROFILE"
+setsid "$CHROME" \
+	--app="$MINI_URL" \
+	--user-data-dir="$PROFILE" \
+	--window-size=580,860 \
+	--no-first-run \
+	--no-default-browser-check \
+	--password-store=basic \
+	>/dev/null 2>&1 &
+
+for _ in $(seq 1 40); do
+	win="$(find_window)"
+	if [ -n "$window" ]; then
+		hyprctl dispatch "hl.dsp.focus({window=\"address:$window\"})" >/dev/null 2>&1
+		exit 0
+	fi
+	sleep 0.25
+done

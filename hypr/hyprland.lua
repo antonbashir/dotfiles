@@ -9,7 +9,9 @@ compositor.config({
     disable_scale_checks = true,
     enable_stdout_logs = false,
   },
-
+  render = {
+    cm_auto_hdr = 0,
+  },
   general = {
     gaps_in = 5,
     gaps_out = 5,
@@ -131,6 +133,7 @@ compositor.bind("SUPER + J", compositor.dsp.layout("togglesplit"))
 compositor.bind("SUPER + V", compositor.dsp.window.fullscreen({ mode = "fullscreen", action = "unset" }))
 compositor.bind("SUPER + V", compositor.dsp.window.float({ action = "toggle" }))
 compositor.bind("SUPER + Q", compositor.dsp.exec_cmd("kitty"))
+compositor.bind("SUPER + C", compositor.dsp.exec_cmd("~/.config/scripts/openchamber"))
 compositor.bind("SUPER + W", compositor.dsp.window.close())
 compositor.bind("SUPER + L", compositor.dsp.exec_cmd("loginctl lock-sessions"))
 compositor.bind("SUPER + M", compositor.dsp.exec_cmd(powermenu))
@@ -176,6 +179,15 @@ for _, application in ipairs(float_applications) do
     animation = "popin",
   })
 end
+
+compositor.window_rule({
+  name = "openchamber-mini-chat",
+  match = { class = "^chrome*.*mini-chat.*$" },
+  float = true,
+  animation = "popin",
+  center = true,
+  size = { 580, 860 },
+})
 
 compositor.window_rule({
   match = { class = "^(nemo)$" },
