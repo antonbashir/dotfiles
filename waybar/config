@@ -52,7 +52,7 @@
   },
   "temperature#cpu": {
     "interval": 1,
-    "hwmon-path": "/sys/devices/platform/asus-ec-sensors/hwmon/hwmon5/temp1_input",
+    "hwmon-path": "/sys/devices/platform/asus-ec-sensors/hwmon/hwmon6/temp1_input",
     "critical-threshold": 90,
     "format-critical": "({temperatureC}°C)",
     "format": "({temperatureC}°C)"
