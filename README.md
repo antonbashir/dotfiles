@@ -20,7 +20,7 @@
 * GTK Icons - Lyra Blue Dark
 * GTK Cursor - Catppuccin Mocha Dark Cursors
 * Bash prompt - Own
-* Fonts - Segoe UI & CaskaydiaCove
+* Fonts - Geist & CaskaydiaCove
 * Other - Black & White contrast
 
 ## Screenshots

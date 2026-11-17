@@ -18,15 +18,16 @@ compositor.config({
     border_size = 0,
     layout = "dwindle",
   },
-
+  animations = {
+    enabled = true,
+  },
   cursor = {
     no_hardware_cursors = true,
     no_warps = true,
   },
-
   decoration = {
-    rounding = 32,
-    rounding_power = 8.0,
+    rounding = 18,
+    rounding_power = 4.0,
     blur = {
       enabled = false,
     },
@@ -38,7 +39,6 @@ compositor.config({
       color_inactive = "rgba(0892d0ff)",
     },
   },
-
   misc = {
     disable_hyprland_logo = true,
     disable_splash_rendering = true,
@@ -48,17 +48,13 @@ compositor.config({
     enable_anr_dialog = false,
     on_focus_under_fullscreen = 1,
   },
-
   xwayland = {
     force_zero_scaling = true,
   },
-
   dwindle = {
     preserve_split = true,
   },
-
   master = {},
-
   input = {
     kb_layout = "us,ru",
     kb_variant = "",
@@ -72,6 +68,11 @@ compositor.config({
   },
 })
 
+compositor.animation({
+  leaf = "fadePopups",
+  enabled = false,
+})
+
 compositor.monitor({ output = "DP-1", mode = "5120x2880@60", position = "0x0", scale = "2" })
 compositor.monitor({ output = "DP-2", mode = "5120x2880@60", position = "2560x0", scale = "2" })
 compositor.monitor({ output = "DP-3", mode = "3840x2160@60", position = "5120x0", scale = "1.25" })
@@ -79,6 +80,7 @@ compositor.monitor({ output = "DP-3", mode = "3840x2160@60", position = "5120x0"
 compositor.env("GTK_THEME", "Colloid-Dark")
 compositor.env("HYPRCURSOR_THEME", "catppuccin-mocha-dark-cursors")
 compositor.env("HYPRCURSOR_SIZE", "24")
+compositor.env("XCURSOR_THEME", "catppuccin-mocha-dark-cursors")
 compositor.env("XCURSOR_SIZE", "24")
 
 compositor.on("hyprland.start", function()
