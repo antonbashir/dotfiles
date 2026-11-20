@@ -9,21 +9,33 @@ const vec3 rgbBalance = vec3(1.0, 1.0, 1.0);
 const float vibranceStrength = 0.10;
 const float saturationThreshold = 0.15;
 const vec3 vibranceCoefficient = rgbBalance * -vibranceStrength;
+const float saturationGain = 1.50;
+const float gammaPower = 2.2;
+const vec3 lumaCoefficient = vec3(0.212656, 0.715158, 0.072186);
 
 void main()
 {
-    vec4 pixelColor = texture(tex, v_texcoord);
-    vec3 color = pixelColor.rgb;
-    vec3 lumaCoefficient = vec3(0.212656, 0.715158, 0.072186);
-    float luma = dot(lumaCoefficient, color);
-    float maxColor = max(color.r, max(color.g, color.b));
-    float minColor = min(color.r, min(color.g, color.b));
-    float saturation = maxColor - minColor;
-    vec3 vibranceTransform = (sign(vibranceCoefficient) * saturation - 1.0) * vibranceCoefficient + 1.0;
-    vec3 saturatedColor = mix(vec3(luma), color, vibranceTransform);
-    float fadeFactor = smoothstep(saturationThreshold, saturationThreshold + 0.3, saturation) * smoothstep(0.05, 0.25, luma);
-    vec3 adjustedColor = mix(color, saturatedColor, fadeFactor);
-    float shadowMask = smoothstep(0.0, 0.3, luma);
-    adjustedColor = pow(adjustedColor, vec3(1.0 + (1.0 - shadowMask) * 0.4));
-    fragColor = vec4(adjustedColor, pixelColor.a);
+	vec4 pixelColor = texture(tex, v_texcoord);
+	vec3 color = pixelColor.rgb;
+	float luma = dot(lumaCoefficient, color);
+	float maxColor = max(color.r, max(color.g, color.b));
+	float minColor = min(color.r, min(color.g, color.b));
+	float saturation = maxColor - minColor;
+	vec3 vibranceTransform = (sign(vibranceCoefficient) * saturation - 1.0) * vibranceCoefficient + 1.0;
+	vec3 saturatedColor = mix(vec3(luma), color, vibranceTransform);
+	float fadeFactor = smoothstep(saturationThreshold, saturationThreshold + 0.3, saturation) * smoothstep(0.05, 0.25, luma);
+	vec3 adjustedColor = mix(color, saturatedColor, fadeFactor);
+	float shadowMask = smoothstep(0.0, 0.3, luma);
+	adjustedColor = pow(adjustedColor, vec3(1.0 + (1.0 - shadowMask) * 0.4));
+	vec3 linearColor = pow(clamp(adjustedColor, 0.0, 1.0), vec3(gammaPower));
+	float linearLuma = dot(lumaCoefficient, linearColor);
+	float highlightGuard = 1.0 - smoothstep(0.75, 1.0, linearLuma);
+	float gain = 1.0 + (saturationGain - 1.0) * highlightGuard;
+	vec3 boostedColor = mix(vec3(linearLuma), linearColor, gain);
+	float peak = max(boostedColor.r, max(boostedColor.g, boostedColor.b));
+	if (peak > 1.0)
+	{
+		boostedColor /= peak;
+	}
+	fragColor = vec4(pow(clamp(boostedColor, 0.0, 1.0), vec3(1.0 / gammaPower)), pixelColor.a);
 }

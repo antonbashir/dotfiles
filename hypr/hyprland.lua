@@ -73,9 +73,9 @@ compositor.animation({
   enabled = false,
 })
 
-compositor.monitor({ output = "DP-1", mode = "5120x2880@60", position = "0x0", scale = "2" })
-compositor.monitor({ output = "DP-2", mode = "5120x2880@60", position = "2560x0", scale = "2" })
-compositor.monitor({ output = "DP-3", mode = "3840x2160@60", position = "5120x0", scale = "1.25" })
+compositor.monitor({ output = "DP-1", mode = "5120x2880@60", position = "0x0", scale = "2", cm = "dp3", bitdepth = 10, sdr_eotf = "gamma22" })
+compositor.monitor({ output = "DP-2", mode = "5120x2880@60", position = "2560x0", scale = "2", cm = "dp3", bitdepth = 10, sdr_eotf = "gamma22" })
+compositor.monitor({ output = "DP-3", mode = "3840x2160@60", position = "5120x0", scale = "1.25", cm = "dp3", bitdepth = 10, sdr_eotf = "gamma22" })
 
 compositor.env("GTK_THEME", "Colloid-Dark")
 compositor.env("HYPRCURSOR_THEME", "catppuccin-mocha-dark-cursors")
@@ -141,7 +141,7 @@ compositor.bind("SUPER + L", compositor.dsp.exec_cmd("loginctl lock-sessions"))
 compositor.bind("SUPER + M", compositor.dsp.exec_cmd(powermenu))
 compositor.bind("SUPER + P", compositor.dsp.window.pseudo())
 compositor.bind("SUPER + S", compositor.dsp.exec_cmd("pkill grim; grim -t jpeg -g \"$(slurp)\" - | swappy -f -"))
-compositor.bind("SUPER + F", compositor.dsp.window.fullscreen(0))
+compositor.bind("SUPER + F", compositor.dsp.window.fullscreen_state({ internal = 2, client = 0, action = "toggle" }))
 compositor.bind("SUPER + N", compositor.dsp.window.fullscreen(2))
 
 compositor.bind("SUPER + left", compositor.dsp.focus({ direction = "left" }))
