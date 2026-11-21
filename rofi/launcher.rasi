@@ -136,7 +136,7 @@ element selected.urgent {
 }
 element selected.normal {
     background-color:            var(selected);
-    text-color:                  var(background);
+    text-color:                  var(foreground);
 }
 element-icon {
     background-color:            transparent;

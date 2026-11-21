@@ -1,14 +1,14 @@
 * {
   border: none;
   border-radius: 0px;
-  font-family: "Segoe UI Variable Static Display", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 14px;
-  font-weight: bold;
-  color: #FFFFFF;
+  font-weight: 500;
+  color: #E6E8EA;
 }
 
 #window {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 #mode {
@@ -16,8 +16,8 @@
 }
 
 window#waybar {
-  background-color: rgba(15, 15, 15, 0.75);
-  color: #FFFFFF;
+  background-color: rgba(18, 20, 24, 0.92);
+  color: #E6E8EA;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
@@ -25,7 +25,7 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  background-color: rgba(27, 27, 27, 1);
+  background-color: #121418;
   border-radius: 36px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.9);
   padding: 8px;
@@ -34,23 +34,23 @@ window#waybar {
 
 tooltip,
 menu {
-  background-color: rgba(15, 15, 15, 1);
+  background-color: #121418;
   border-radius: 12px;
 }
 
 tooltip label {
-  color: #FFFFFF;
+  color: #E6E8EA;
   margin: 8px;
 }
 
 menu menuitem {
-  color: #FFFFFF;
+  color: #E6E8EA;
   padding: 8px;
   margin: 2px;
 }
 
 menu menuitem:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #26282F;
   border-radius: 8px;
 }
 
@@ -82,38 +82,38 @@ menu menuitem:hover {
   border: none;
   box-shadow: none;
   border-radius: 50%;
-  background: #FFFFFF;
+  background: #C9CCD0;
 }
 
 #pulseaudio-slider trough {
   min-height: 6px; 
   min-width: 100px;
   border-radius: 32px;
-  background: #1A1A1A;
+  background: #121418;
 }
 
 #pulseaudio-slider highlight {
   min-width: 1px;
   border-radius: 32px;
-  background: #FFFFFF;
+  background: #C9CCD0;
 }
 
 #pulseaudio:hover trough {
-  background: #242424; 
+  background: #1F2228; 
 }
 
 #temperature {
-  color: #999;
+  color: #949BA5;
   font-size: 10px;
   padding: 4px 8px 0 0;
 }
 
 #temperature.critical {
-  color: #999;
+  color: #949BA5;
 }
 
 #custom-gpu-temperature {
-  color: #999;
+  color: #949BA5;
   font-size: 10px;
   padding: 4px 0 0 0;
 }
@@ -123,7 +123,7 @@ menu menuitem:hover {
 #disk.one.warning,
 #memory.warning {
   background-color: inherit;
-  color: #ffb86c;
+  color: #F9E2AF;
 }
 
 #battery.critical,
@@ -132,5 +132,5 @@ menu menuitem:hover {
 #memory.critical,
 #network.disconnected,
 #pulseaudio.muted {
-  color: #ff5555;
+  color: #F38BA8;
 }

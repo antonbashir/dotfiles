@@ -35,8 +35,8 @@ compositor.config({
       enabled = true,
       range = 24,
       render_power = 16,
-      color = "rgba(7734ebff)",
-      color_inactive = "rgba(0892d0ff)",
+      color = "rgba(5d32e466)",
+      color_inactive = "rgba(121418ff)",
     },
   },
   misc = {
