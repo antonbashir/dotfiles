@@ -10,11 +10,11 @@ mesg="Uptime : $(uptime -p | sed -e 's/up //g')"
 layout=$(cat ${RASI} | grep 'USE_ICON' | cut -d'=' -f2)
 if [[ "$layout" == 'NO' ]]; then
 	option_1=" Lock"
-	option_2="↺ Reboot"
+	option_2=" Reboot"
 	option_3=" Shutdown"
 else
 	option_1=""
-	option_2="↺"
+	option_2=""
 	option_3=""
 fi
 cnflayout=$(cat ${CNFR} | grep 'USE_ICON' | cut -d'=' -f2)

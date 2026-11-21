@@ -125,14 +125,20 @@ element alternate.normal {
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
+    border:                      1px solid;
+    border-radius:               15px;
+    border-color:                var(urgent-border);
     background-color:            var(urgent);
-    text-color:                  var(background);
+    text-color:                  var(foreground);
 }
 element normal.active,
 element alternate.active,
 element selected.urgent {
+    border:                      1px solid;
+    border-radius:               15px;
+    border-color:                var(active-border);
     background-color:            var(active);
-    text-color:                  var(background);
+    text-color:                  var(foreground);
 }
 element selected.normal {
     background-color:            var(selected);

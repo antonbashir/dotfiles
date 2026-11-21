@@ -4,6 +4,9 @@
     border:         #2F333B;
     foreground:     #E6E8EA;
     selected:       #2F333B;
-    active:         #8BC79A;
-    urgent:         #F38BA8;
+    selected-border: #4A4F59;
+    active:         #183A2B;
+    active-border:  #3E7D5C;
+    urgent:         #4A4030;
+    urgent-border:  #B8A27A;
 }
