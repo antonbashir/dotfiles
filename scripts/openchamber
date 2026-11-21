@@ -23,7 +23,7 @@ fi
 
 if ! curl -fsS --max-time 1 "$FULL_URL/health" >/dev/null 2>&1; then
 	if [ -x "$APPLICATION" ]; then
-		setsid "$APPLICATION" --use-gl=egl --background >/dev/null 2>&1 &
+		setsid "$APPLICATION" --use-angle=vulkan --enable-features=VulkanFromANGLE --disable-features=WaylandWpColorManagerV1 --background >/dev/null 2>&1 &
 	fi
 	for _ in $(seq 1 80); do
 		curl -fsS --max-time 1 "$FULL_URL/health" >/dev/null 2>&1 && break
@@ -32,7 +32,7 @@ if ! curl -fsS --max-time 1 "$FULL_URL/health" >/dev/null 2>&1; then
 fi
 
 mkdir -p "$PROFILE"
-setsid "$CHROME" --use-gl=egl \
+setsid "$CHROME" --disable-features=WaylandWpColorManagerV1 \
 	--app="$MINI_URL" \
 	--user-data-dir="$PROFILE" \
 	--window-size=580,860 \
