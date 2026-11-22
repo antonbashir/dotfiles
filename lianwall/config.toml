@@ -6,10 +6,10 @@ image_dir = "/home/anton/pictures/backgrounds"
 [video_engine]
 backend = "mpvpaper"
 fit = "crop"
-decode = "software"
-interval = 120
+decode = "auto"
+interval = 600
 display = "*"
-mpvpaper_args = ["--profile=wallpaper"]
+mpvpaper_args = []
 mpv_args = [
     "--sws-scaler=fast-bilinear",
     "--scale=bilinear",
@@ -24,7 +24,7 @@ mpv_args = [
     "--video-zoom=0",
     "--panscan=1.0",
 ]
-ipc_socket = ""
+ipc_socket = "/tmp/lianwall-mpv.sock"
 switch_delay_ms = 100
 transition = "none"
 transition_ms = 400
