@@ -1,55 +1,66 @@
 [paths]
-image_dir = "~/pictures/backgrounds"
 mode = "Video"
-video_dir = "~/videos/backgrounds"
+video_dir = "/home/anton/videos/backgrounds"
+image_dir = "/home/anton/pictures/backgrounds"
 
 [video_engine]
-display = "*"
+backend = "mpvpaper"
+fit = "crop"
+decode = "software"
 interval = 120
+display = "*"
+mpvpaper_args = ["--profile=wallpaper"]
 mpv_args = [
-  "--sws-scaler=fast-bilinear",
-  "--scale=bilinear",
-  "--dscale=bilinear",
-  "--cscale=bilinear",
-  "--gpu-api=vulkan",
-  "--deband=no",
-  "--dither=no",
-  "--no-audio",
-  "--loop=inf",
-  "--hwdec=auto",
-  "--video-zoom=0",
-  "--panscan=1.0",
+    "--sws-scaler=fast-bilinear",
+    "--scale=bilinear",
+    "--dscale=bilinear",
+    "--cscale=bilinear",
+    "--gpu-api=vulkan",
+    "--deband=no",
+    "--dither=ordered",
+    "--no-audio",
+    "--loop=inf",
+    "--hwdec=auto-safe",
+    "--video-zoom=0",
+    "--panscan=1.0",
 ]
-mpvpaper_args = [
-  "--profile=wallpaper",
-]
+ipc_socket = ""
+switch_delay_ms = 100
+transition = "none"
+transition_ms = 400
+transition_fps = 60
 
 [image_engine]
+backend = "awww"
+fit = "crop"
+transition = "fade"
+transition_ms = 400
+transition_fps = 60
 interval = 600
 outputs = ""
-swww_args = [
-  "--transition-type=fade",
-  "--transition-duration=2.0",
-  "--transition-fps=60",
-  "--transition-step=20",
-  "--resize=crop",
+awww_args = [
+    "--transition-type=fade",
+    "--transition-duration=2.0",
+    "--transition-fps=60",
+    "--transition-step=20",
+    "--resize=crop",
 ]
 
 [algorithm]
-bias_lambda = 0.35
 strategy = "clockwise_biased_softmax"
+bias_lambda = 0.35
 temperature = 0.28
 
 [vram]
-backend = "auto"
+enabled = true
+threshold_percent = 25.0
+recovery_percent = 40.0
 check_interval = 2
 cooldown_seconds = 30
+backend = "auto"
 custom_command = ""
-enabled = true
-recovery_percent = 40.0
-threshold_percent = 25.0
 
 [daemon]
-log_level = "info"
-pid_path = "/tmp/lianwall.pid"
 socket_path = "/tmp/lianwall.sock"
+pid_path = "/tmp/lianwall.pid"
+log_level = "info"
